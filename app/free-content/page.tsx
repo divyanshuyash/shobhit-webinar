@@ -1,14 +1,12 @@
 import {
   Bot,
-  BriefcaseBusiness,
-  Camera,
-  Clapperboard,
   Download,
   FileText,
   Mail,
   PlayCircle,
   Rocket
 } from "lucide-react";
+import { FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import type { CSSProperties } from "react";
 import {
   XAccent,
@@ -35,21 +33,21 @@ export default function FreeContentPage() {
       ><XHeroActions video={false} /></XHero>
 
       <XSection>
-        <XGrid columns={4} items={[
-          { title: "YouTube", copy: "In-depth videos on business models, strategy and AI.", icon: Clapperboard, footer: "Watch on YouTube" },
-          { title: "Instagram", copy: "Daily tips, reels and insights on growth and sales.", icon: Camera, footer: "Follow on Instagram" },
-          { title: "LinkedIn", copy: "Thought leadership, case studies and professional insight.", icon: BriefcaseBusiness, footer: "Follow on LinkedIn" },
+        <div className="x-platform-grid"><XGrid columns={4} items={[
+          { title: "YouTube", copy: "In-depth videos on business models, strategy and AI.", icon: FaYoutube, footer: "Watch on YouTube" },
+          { title: "Instagram", copy: "Daily tips, reels and insights on growth and sales.", icon: FaInstagram, footer: "Follow on Instagram" },
+          { title: "LinkedIn", copy: "Thought leadership, case studies and professional insight.", icon: FaLinkedinIn, footer: "Follow on LinkedIn" },
           { title: "Blogs", copy: "In-depth articles, frameworks and business guides.", icon: FileText, footer: "Read blogs" }
-        ]} />
+        ]} /></div>
       </XSection>
 
       <XSection>
         <XTitle align="left">Featured videos</XTitle>
         <div className="x-media-grid" style={{ "--x-media-cols": 4 } as CSSProperties}>
           <XMediaCard image="/images/founder/founder-webinar.png" title="Consulting business model explained" video label="12:45" />
-          <XMediaCard image="/images/generated/webinar-hero.png" title="AI tools consultants must use" video label="14:32" />
-          <XMediaCard image="/images/generated/home-hero.png" title="How to get high-ticket clients" video label="11:08" />
-          <XMediaCard image="/images/generated/content-hero.png" title="Build systems, not just processes" video label="10:21" />
+          <XMediaCard image="/images/editorial/ai-systems.png" title="AI tools consultants must use" video label="14:32" />
+          <XMediaCard image="/images/editorial/sales-psychology.png" title="How to get high-ticket clients" video label="11:08" />
+          <XMediaCard image="/images/editorial/offer-blueprint.png" title="Build systems, not just processes" video label="10:21" />
         </div>
       </XSection>
 
@@ -57,7 +55,7 @@ export default function FreeContentPage() {
         <XTitle align="left">Short-form content</XTitle>
         <div className="x-short-grid">
           {["One offer that sells itself", "Stop doing free consultations", "The consultant's weekly checklist", "3 ways to find premium clients", "Automate this. Save 10+ hours", "Pricing is not the problem", "Perfect your process", "How I run my consulting business"].map((title, index) => (
-            <article key={title}><img src={["/images/generated/blogs-hero.png", "/images/generated/webinar-hero.png", "/images/generated/home-hero.png", "/images/generated/content-hero.png"][index % 4]} alt="" /><span>{title}</span><small>▶ {8.3 + index}K</small></article>
+            <article key={title}><img src={["/images/founder/founder-webinar.png", "/images/editorial/offer-blueprint.png", "/images/generated/home-hero.png", "/images/editorial/ai-systems.png", "/images/editorial/sales-psychology.png", "/images/generated/blogs-hero.png", "/images/generated/content-hero.png", "/images/editorial/corporate-freedom.png"][index]} alt="" /><span>{title}</span><small>▶ {8.3 + index}K</small></article>
           ))}
         </div>
       </XSection>
@@ -89,12 +87,12 @@ export default function FreeContentPage() {
         <XTitle align="left">Join <XAccent>15,000+</XAccent> growth-minded founders & consultants</XTitle>
         <div className="x-split-grid">
           <XStats items={[
-            { value: "15,000+", label: "YouTube subscribers", icon: Clapperboard },
-            { value: "28,000+", label: "Instagram followers", icon: Camera },
-            { value: "25,000+", label: "LinkedIn followers", icon: BriefcaseBusiness },
+            { value: "15,000+", label: "YouTube subscribers", icon: FaYoutube },
+            { value: "28,000+", label: "Instagram followers", icon: FaInstagram },
+            { value: "25,000+", label: "LinkedIn followers", icon: FaLinkedinIn },
             { value: "10,000+", label: "Email community", icon: Mail }
           ]} />
-          <div className="x-media-grid"><XMediaCard image="/images/stock/workshop-community.png" title="Community" /><XMediaCard image="/images/generated/webinar-hero.png" title="Live learning" /></div>
+          <div className="x-media-grid"><XMediaCard image="/images/stock/workshop-community.png" title="Community" /><XMediaCard image="/images/editorial/sales-psychology.png" title="Live learning" /></div>
         </div>
       </XSection>
 

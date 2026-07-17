@@ -25,13 +25,13 @@ import {
 
 const articles = [
   ["/images/stock/strategy-still-life.png", "Chanakya on competition", "Why most consultants lose without a strategy"],
-  ["/images/generated/blogs-hero.png", "High-ticket consulting", "How to build an offer that sells"],
-  ["/images/generated/webinar-hero.png", "Sales psychology", "The psychology behind premium buying decisions"],
-  ["/images/generated/content-hero.png", "AI for consultants", "10 ways AI can multiply your consulting business"],
-  ["/images/generated/contact-hero.png", "Corporate freedom", "Design a business that buys your freedom"],
+  ["/images/editorial/offer-blueprint.png", "High-ticket consulting", "How to build an offer that sells"],
+  ["/images/editorial/sales-psychology.png", "Sales psychology", "The psychology behind premium buying decisions"],
+  ["/images/editorial/ai-systems.png", "AI for consultants", "10 ways AI can multiply your consulting business"],
+  ["/images/editorial/corporate-freedom.png", "Corporate freedom", "Design a business that buys your freedom"],
   ["/images/founder/founder-desk.png", "Personal brand", "Build a personal brand around useful thinking"],
-  ["/images/generated/home-hero.png", "Bhagavad Gita & business", "Timeless lessons every consultant should know"],
-  ["/images/generated/about-hero.png", "Client case studies", "How a consultant can scale with clarity"]
+  ["/images/editorial/framework-architecture.png", "Bhagavad Gita & business", "Timeless lessons every consultant should know"],
+  ["/images/stock/workshop-community.png", "Client case studies", "How a consultant can scale with clarity"]
 ];
 
 export default function BlogsPage() {

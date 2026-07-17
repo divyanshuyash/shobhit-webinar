@@ -1,12 +1,17 @@
 import {
+  BadgeDollarSign,
   BadgeIndianRupee,
   BadgeCheck,
   Bot,
+  BrainCircuit,
   CalendarDays,
+  ChartNoAxesCombined,
   Clock3,
-  Gem,
+  Crosshair,
   Handshake,
+  Magnet,
   MessageCircleMore,
+  PackageCheck,
   Presentation,
   ScanSearch,
   Sparkles,
@@ -55,12 +60,12 @@ export default function WebinarPage() {
       <XSection>
         <XTitle>What you will learn</XTitle>
         <XGrid columns={6} numbered items={[
-          { title: "Choose your niche", copy: "Find a high-ticket consulting niche that sells.", icon: Target },
-          { title: "Build the offer", copy: "Create an irresistible offer clients understand.", icon: Gem },
-          { title: "Attract clients", copy: "Build demand without depending on paid ads.", icon: UsersRound },
+          { title: "Choose your niche", copy: "Find a high-ticket consulting niche that sells.", icon: Crosshair },
+          { title: "Build the offer", copy: "Create an irresistible offer clients understand.", icon: BadgeDollarSign },
+          { title: "Attract clients", copy: "Build demand without depending on paid ads.", icon: Magnet },
           { title: "Close with confidence", copy: "Lead high-ticket sales conversations.", icon: Handshake },
-          { title: "Deliver results", copy: "Create case studies and strong client outcomes.", icon: Sparkles },
-          { title: "Scale consistently", copy: "Build toward a ₹1 crore consulting business.", icon: TrendingUp }
+          { title: "Deliver results", copy: "Create case studies and strong client outcomes.", icon: PackageCheck },
+          { title: "Scale consistently", copy: "Build toward a ₹1 crore consulting business.", icon: ChartNoAxesCombined }
         ]} />
       </XSection>
 
@@ -80,7 +85,7 @@ export default function WebinarPage() {
       <XSection>
         <XTitle>What makes this webinar different</XTitle>
         <XGrid columns={5} items={[
-          { title: "Proven framework", copy: "Not theory.", icon: Target },
+          { title: "Proven framework", copy: "Not theory.", icon: BrainCircuit },
           { title: "100% practical", copy: "Actionable strategies you can apply.", icon: Presentation },
           { title: "Real case studies", copy: "Verified client stories can be added.", icon: BadgeCheck },
           { title: "Live Q&A", copy: "Get your questions answered live.", icon: MessageCircleMore },
@@ -93,11 +98,11 @@ export default function WebinarPage() {
           <div className="x-panel">
             <XTitle align="left">The <XAccent>DCL Framework</XAccent></XTitle>
             <XSteps compact items={[
-              { title: "Positioning", icon: Target },
-              { title: "Attraction", icon: UsersRound },
-              { title: "Offer", icon: Gem },
+              { title: "Positioning", icon: Crosshair },
+              { title: "Attraction", icon: Magnet },
+              { title: "Offer", icon: BadgeDollarSign },
               { title: "Sales", icon: Handshake },
-              { title: "Freedom", icon: TrendingUp }
+              { title: "Freedom", icon: ChartNoAxesCombined }
             ]} />
           </div>
           <div className="x-panel flex items-center">
@@ -113,7 +118,7 @@ export default function WebinarPage() {
             { title: "Research faster", icon: ScanSearch },
             { title: "Automate content", icon: Bot },
             { title: "Deliver value", icon: Sparkles },
-            { title: "Scale leverage", icon: TrendingUp }
+            { title: "Scale leverage", icon: ChartNoAxesCombined }
           ]} />
         </div>
       </XSection>
@@ -131,8 +136,8 @@ export default function WebinarPage() {
       <XSection>
         <XTitle align="left">Loved by consultants & entrepreneurs</XTitle>
         <div className="x-media-grid" style={{ "--x-media-cols": 4 } as CSSProperties}>
-          {["/images/generated/about-hero.png", "/images/generated/blogs-hero.png", "/images/generated/webinar-hero.png", "/images/generated/content-hero.png"].map((image, index) => (
-            <XMediaCard key={image} image={image} title={["Clarity that changed everything", "Practical and powerful", "The DCL framework works", "A system I can follow"][index]} copy="Verified testimonial to be added" video />
+          {["/images/editorial/testimonial-leadership.png", "/images/editorial/testimonial-finance.png", "/images/editorial/testimonial-career.png", "/images/stock/workshop-community.png"].map((image, index) => (
+            <XMediaCard key={image} image={image} title={["Clarity that changed everything", "Practical and powerful", "The DCL framework works", "A system I can follow"][index]} copy="Illustrative preview · verified testimonial to be added" video />
           ))}
         </div>
       </XSection>

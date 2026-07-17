@@ -2,18 +2,22 @@ import Image from "next/image";
 import {
   BadgeIndianRupee,
   Bot,
-  BrainCircuit,
+  ChartNoAxesCombined,
   Compass,
+  Crosshair,
   Eye,
   Gem,
   Gift,
   Handshake,
   Infinity,
+  Lightbulb,
   Magnet,
+  PackageCheck,
+  PackageOpen,
   Rocket,
   Settings2,
+  Sword,
   Target,
-  TrendingUp,
   UsersRound
 } from "lucide-react";
 import {
@@ -28,14 +32,14 @@ import {
 } from "@/components/ExactBlocks";
 import { dclSteps, roadmap } from "@/data/site";
 
-const pillarIcons = [Eye, Target, Gift, UsersRound, Rocket];
+const pillarIcons = [Eye, Crosshair, PackageOpen, UsersRound, Sword];
 const journey = [
-  { title: "Clarity", copy: "Know who you are and why you are here.", icon: BrainCircuit },
-  { title: "Focus", copy: "Choose your niche and ideal client.", icon: Target },
-  { title: "Offer", copy: "Create a high-value offer.", icon: Gift },
+  { title: "Clarity", copy: "Know who you are and why you are here.", icon: Lightbulb },
+  { title: "Focus", copy: "Choose your niche and ideal client.", icon: Crosshair },
+  { title: "Offer", copy: "Create a high-value offer.", icon: PackageCheck },
   { title: "Audience", copy: "Attract the right people.", icon: Magnet },
   { title: "Trust", copy: "Build trust and demonstrate value.", icon: Handshake },
-  { title: "Results", copy: "Deliver transformation.", icon: TrendingUp },
+  { title: "Results", copy: "Deliver transformation.", icon: ChartNoAxesCombined },
   { title: "Scale", copy: "Scale with systems and AI.", icon: Rocket }
 ];
 const roadmapIcons = [Compass, Gift, Gem, UsersRound, Handshake, Target, Bot, BadgeIndianRupee];
@@ -44,7 +48,7 @@ export default function FrameworkPage() {
   return (
     <>
       <section className="x-framework-hero">
-        <Image src="/images/generated/contact-hero.png" alt="" fill preload sizes="100vw" />
+        <Image src="/images/editorial/framework-architecture.png" alt="Dark architectural hall with gold-lit strategy columns" fill preload sizes="100vw" />
         <div className="x-framework-shade" />
         <XWrap>
           <h1>The <XAccent>DCL</XAccent> Framework</h1>
@@ -93,13 +97,17 @@ export default function FrameworkPage() {
           { title: "Timeless principles", copy: "Rooted in wisdom that has stood the test of time.", icon: Infinity },
           { title: "Modern systems", copy: "Built with proven frameworks and processes.", icon: Settings2 },
           { title: "AI-powered execution", copy: "Use tools and automation to work faster.", icon: Bot },
-          { title: "Results that compound", copy: "Each pillar strengthens the next.", icon: TrendingUp }
+          { title: "Results that compound", copy: "Each pillar strengthens the next.", icon: ChartNoAxesCombined }
         ]} />
       </XSection>
 
       <XSection>
         <XTitle>Transformation in action</XTitle>
-        <div className="x-testimonial-grid"><XTestimonial /><XTestimonial /><XTestimonial /></div>
+        <div className="x-testimonial-grid">
+          <XTestimonial image="/images/editorial/testimonial-leadership.png" />
+          <XTestimonial image="/images/editorial/testimonial-finance.png" />
+          <XTestimonial image="/images/editorial/testimonial-career.png" />
+        </div>
       </XSection>
 
       <XSection><XCta title="Attend the free live webinar" copy="Learn the exact five-step framework to build your consulting business." /></XSection>

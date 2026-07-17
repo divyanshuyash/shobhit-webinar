@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { LucideIcon } from "lucide-react";
+import type { ComponentType, CSSProperties, ReactNode } from "react";
 import {
   ArrowRight,
   CalendarDays,
@@ -10,14 +10,19 @@ import {
   Star,
   Video
 } from "lucide-react";
-import type { CSSProperties, ReactNode } from "react";
 import { WEBINAR_URL } from "@/data/constants";
-import { Reveal } from "./ExactMotion";
+import { Reveal, Stagger, StaggerCard, StaggerCell } from "./ExactMotion";
+
+export type ExactIcon = ComponentType<{
+  size?: number | string;
+  className?: string;
+  strokeWidth?: number;
+}>;
 
 export type ExactItem = {
   title: string;
   copy?: string;
-  icon: LucideIcon;
+  icon: ExactIcon;
   eyebrow?: string;
   footer?: string;
 };
@@ -117,7 +122,7 @@ export function XHeroActions({ video = true }: { video?: boolean }) {
   );
 }
 
-export function XMeta({ items }: { items: Array<{ icon: LucideIcon; title: string; copy?: string }> }) {
+export function XMeta({ items }: { items: Array<{ icon: ExactIcon; title: string; copy?: string }> }) {
   return (
     <div className="x-meta">
       <XWrap>
@@ -135,18 +140,18 @@ export function XSection({ children, className = "" }: { children: ReactNode; cl
 
 export function XGrid({ items, columns = 5, numbered = false }: { items: ExactItem[]; columns?: number; numbered?: boolean }) {
   return (
-    <div className="x-grid" style={{ "--x-cols": columns } as CSSProperties}>
+    <Stagger className="x-grid" style={{ "--x-cols": columns } as CSSProperties}>
       {items.map(({ title, copy, icon: Icon, eyebrow, footer }, index) => (
-        <article key={`${title}-${index}`} className="x-card">
+        <StaggerCard key={`${title}-${index}`} className="x-card">
           {numbered ? <span className="x-card-number">{String(index + 1).padStart(2, "0")}</span> : null}
-          <Icon size={31} strokeWidth={1.55} />
+          <span className="x-card-icon"><Icon size={31} strokeWidth={1.55} /></span>
           {eyebrow ? <small>{eyebrow}</small> : null}
           <h3>{title}</h3>
           {copy ? <p>{copy}</p> : null}
           {footer ? <b>{footer}</b> : null}
-        </article>
+        </StaggerCard>
       ))}
-    </div>
+    </Stagger>
   );
 }
 
@@ -158,28 +163,28 @@ export function XCheckList({ items, negative = false }: { items: string[]; negat
   );
 }
 
-export function XStats({ items }: { items: Array<{ value: string; label: string; icon?: LucideIcon }> }) {
+export function XStats({ items }: { items: Array<{ value: string; label: string; icon?: ExactIcon }> }) {
   return (
-    <div className="x-stats" style={{ "--x-stat-cols": items.length } as CSSProperties}>
+    <Stagger className="x-stats" style={{ "--x-stat-cols": items.length } as CSSProperties}>
       {items.map(({ value, label, icon: Icon }) => (
-        <div key={value + label}>{Icon ? <Icon size={25} /> : null}<strong>{value}</strong><span>{label}</span></div>
+        <StaggerCell key={value + label}>{Icon ? <Icon size={25} /> : null}<strong>{value}</strong><span>{label}</span></StaggerCell>
       ))}
-    </div>
+    </Stagger>
   );
 }
 
 export function XSteps({ items, compact = false }: { items: ExactItem[]; compact?: boolean }) {
   return (
-    <div className={`x-steps ${compact ? "is-compact" : ""}`} style={{ "--x-step-count": items.length } as CSSProperties}>
+    <Stagger className={`x-steps ${compact ? "is-compact" : ""}`} style={{ "--x-step-count": items.length } as CSSProperties}>
       {items.map(({ title, copy, icon: Icon }, index) => (
-        <div key={title}>
+        <StaggerCell key={title}>
           <span className="x-step-icon"><Icon size={compact ? 24 : 30} strokeWidth={1.5} /></span>
           <b>{title}</b>
           {copy ? <small>{copy}</small> : null}
           {index < items.length - 1 ? <ArrowRight className="x-step-arrow" size={19} /> : null}
-        </div>
+        </StaggerCell>
       ))}
-    </div>
+    </Stagger>
   );
 }
 
@@ -197,7 +202,7 @@ export function XMediaCard({ image, title, copy, video = false, label }: { image
   );
 }
 
-export function XTestimonial({ quote = "Client testimonial to be added", role = "Verified client story", image = "/images/founder-source/founder-portrait.jpg" }: { quote?: string; role?: string; image?: string }) {
+export function XTestimonial({ quote = "Verified client story to be added", role = "Client story pending verification", image = "/images/editorial/testimonial-leadership.png" }: { quote?: string; role?: string; image?: string }) {
   return (
     <article className="x-testimonial">
       <div className="x-avatar"><Image src={image} alt="" fill sizes="44px" /></div>
@@ -209,8 +214,8 @@ export function XTestimonial({ quote = "Client testimonial to be added", role = 
 export function XFaq({ items }: { items: Array<{ q: string; a: string }> }) {
   return (
     <div className="x-faq">
-      {items.map((item, index) => (
-        <details key={item.q} open={index === 0}>
+      {items.map((item) => (
+        <details key={item.q}>
           <summary>{item.q}<b>+</b></summary>
           <p>{item.a}</p>
         </details>

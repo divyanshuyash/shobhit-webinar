@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   BadgeIndianRupee,
   BookOpenCheck,
@@ -71,19 +72,16 @@ export default function AboutPage() {
 
       <XSection>
         <div className="x-split-grid">
-          <div className="x-panel relative overflow-hidden">
-            <XTitle align="left">Why I built <XAccent>The Transformers Hub</XAccent></XTitle>
-            <p>I saw talented professionals trapped in jobs they did not love. They had skills but no strategy, worked hard but did not build wealth or freedom.</p>
-            <p>The Hub exists to help experts transform their skills into high-ticket consulting businesses and become the authority in their niche.</p>
-          </div>
-          <div className="x-panel">
-            <XTitle align="left">Mission: creating <XAccent>Crorepati Chanakyas</XAccent></XTitle>
-            <ul className="x-checks">
-              <li><span>✓</span>Elevate professionals into world-class consultants.</li>
-              <li><span>✓</span>Build businesses with impact, freedom and legacy.</li>
-              <li><span>✓</span>Create a new India of thinkers, strategists and problem solvers.</li>
-            </ul>
-          </div>
+          <article className="x-story-panel">
+            <Image src="/images/stock/workshop-community.png" alt="Shobhit speaking to a consulting workshop" fill sizes="(max-width: 760px) 100vw, 50vw" />
+            <div className="x-story-shade" />
+            <div><XTitle align="left">Why I built <XAccent>The Transformers Hub</XAccent></XTitle><p>I saw talented professionals trapped in jobs they did not love. They had skills but no strategy, worked hard but did not build wealth or freedom.</p><p>The Hub exists to help experts transform their skills into high-ticket consulting businesses and become the authority in their niche.</p></div>
+          </article>
+          <article className="x-story-panel">
+            <Image src="/images/stock/strategy-still-life.png" alt="Gold chess king representing strategy and mission" fill sizes="(max-width: 760px) 100vw, 50vw" />
+            <div className="x-story-shade" />
+            <div><XTitle align="left">Mission: creating <XAccent>Crorepati Chanakyas</XAccent></XTitle><ul className="x-checks"><li><span>✓</span>Elevate professionals into world-class consultants.</li><li><span>✓</span>Build businesses with impact, freedom and legacy.</li><li><span>✓</span>Create a new India of thinkers, strategists and problem solvers.</li></ul></div>
+          </article>
         </div>
       </XSection>
 
@@ -113,7 +111,7 @@ export default function AboutPage() {
       <XSection>
         <XTitle>A glimpse of <XAccent>the journey</XAccent></XTitle>
         <div className="x-media-grid" style={{ "--x-media-cols": 5 } as CSSProperties}>
-          {["/images/generated/webinar-hero.png", "/images/stock/workshop-community.png", "/images/generated/home-hero.png", "/images/generated/blogs-hero.png", "/images/generated/contact-hero.png"].map((image, index) => (
+          {["/images/founder/founder-webinar.png", "/images/stock/workshop-community.png", "/images/editorial/sales-psychology.png", "/images/founder/founder-desk.png", "/images/editorial/offer-blueprint.png"].map((image, index) => (
             <XMediaCard key={image} image={image} title={["Live teaching", "Community", "Strategy session", "Founder writings", "Consulting room"][index]} />
           ))}
         </div>
@@ -121,7 +119,7 @@ export default function AboutPage() {
 
       <XSection>
         <XTitle>What <XAccent>people say</XAccent></XTitle>
-        <div className="x-testimonial-grid"><XTestimonial /><XTestimonial /><XTestimonial /></div>
+        <div className="x-testimonial-grid"><XTestimonial image="/images/editorial/testimonial-leadership.png" /><XTestimonial image="/images/editorial/testimonial-finance.png" /><XTestimonial image="/images/editorial/testimonial-career.png" /></div>
       </XSection>
 
       <XSection><XCta /></XSection>

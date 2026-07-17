@@ -3,13 +3,14 @@ import { Mail, MapPin } from "lucide-react";
 import { FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { brand } from "@/data/constants";
 import { legalLinks, navigation } from "@/data/navigation";
+import { BrandMark } from "./BrandMark";
 
 export function SiteFooter() {
   return (
     <footer className="x-site-footer">
       <div className="x-site-footer-grid">
         <div>
-          <div className="x-site-brand"><span>SS</span><div><strong>{brand.name}</strong><small>{brand.hub}</small></div></div>
+          <div className="x-site-brand"><span><BrandMark /></span><div><strong>{brand.name}</strong><small>{brand.hub}</small></div></div>
           <p>Helping professionals transform their experience into focused, premium consulting businesses.</p>
           <div className="x-site-social"><span><FaYoutube /></span><span><FaInstagram /></span><span><FaLinkedin /></span></div>
         </div>

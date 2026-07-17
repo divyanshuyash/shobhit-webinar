@@ -2,21 +2,31 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { brand, WEBINAR_URL } from "@/data/constants";
 import { navigation } from "@/data/navigation";
+import { BrandMark } from "./BrandMark";
 
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const isHome = pathname === "/";
+
+  useEffect(() => {
+    const updateHeader = () => setScrolled(window.scrollY > 36);
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
+    return () => window.removeEventListener("scroll", updateHeader);
+  }, []);
 
   return (
     <>
-      <header className="x-site-header">
+      <header className={`x-site-header ${isHome ? "is-home" : ""} ${scrolled ? "is-scrolled" : ""} ${open ? "is-open" : ""}`}>
         <div className="x-site-header-inner">
           <Link href="/" className="x-site-brand" aria-label="Shobhit Singhal home">
-            <span>SS</span>
+            <span><BrandMark /></span>
             <div><strong>{brand.name}</strong><small>{brand.hub}</small></div>
           </Link>
           <nav className="x-site-nav" aria-label="Primary navigation">
