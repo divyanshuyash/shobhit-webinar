@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import {
   BadgeDollarSign,
   BadgeIndianRupee,
@@ -116,18 +116,32 @@ const croreSteps = [
 ];
 
 export default function HomePage() {
+  const heroAlt = "Shobhit Singhal and Chanakya in an elegant strategy library";
+  const { props: { srcSet: desktopHeroSrcSet, ...desktopHeroProps } } = getImageProps({
+    src: "/images/generated/home-hero-v2.png",
+    alt: heroAlt,
+    width: 1922,
+    height: 818,
+    quality: 95,
+    sizes: "100vw",
+    fetchPriority: "high"
+  });
+  const { props: { srcSet: mobileHeroSrcSet } } = getImageProps({
+    src: "/images/generated/home-hero-mobile-v2.png",
+    alt: heroAlt,
+    width: 941,
+    height: 1672,
+    quality: 95,
+    sizes: "100vw"
+  });
+
   return (
     <>
       <section className="home-hero">
-        <Image
-          src="/images/generated/home-hero-v2.png"
-          alt="Shobhit Singhal and Chanakya in an elegant strategy library"
-          fill
-          preload
-          quality={95}
-          sizes="100vw"
-          className="home-hero-image"
-        />
+        <picture className="home-hero-picture">
+          <source media="(max-width: 760px)" srcSet={mobileHeroSrcSet} sizes="100vw" />
+          <img {...desktopHeroProps} srcSet={desktopHeroSrcSet} className="home-hero-image" />
+        </picture>
         <div className="home-hero-shade" />
         <XWrap className="home-hero-content">
           <Reveal>
@@ -136,8 +150,8 @@ export default function HomePage() {
               <h1>Become a Modern <XAccent>Chanakya</XAccent></h1>
               <strong>Build a premium, freedom-first business with a clear niche, a valuable offer, consistent leads and AI-powered leverage.</strong>
               <div className="home-hero-actions">
-                <XButton>Join the free webinar</XButton>
-                <XButton quiet href="#intro-video">Watch introduction</XButton>
+                <XButton>Reserve my free seat</XButton>
+                <XButton quiet href="#intro-video">Watch 3-minute introduction</XButton>
               </div>
             </div>
           </Reveal>
