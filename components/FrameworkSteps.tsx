@@ -6,12 +6,12 @@ export function FrameworkSteps({ compact = false }: { compact?: boolean }) {
       {dclSteps.map((step, index) => (
         <article key={step.name} className="premium-panel group rounded-sm p-5 text-center transition duration-300 hover:-translate-y-1 hover:border-gold/55">
           <div className="mb-5 flex items-center justify-between">
-            <span className="flex size-12 items-center justify-center rounded-full border border-gold/55 bg-gold/10 font-display text-2xl text-gold shadow-[0_0_28px_rgba(217,165,32,0.18)]">
-              {index + 1}
+            <span className="flex size-11 items-center justify-center rounded-full border border-gold/55 bg-gold/10 font-display text-xl text-gold shadow-[0_0_28px_rgba(217,165,32,0.18)]">
+              0{index + 1}
             </span>
             <span className="h-px flex-1 data-stream opacity-40 transition group-hover:opacity-90" />
           </div>
-          <h3 className="font-display text-3xl uppercase leading-none tracking-wide text-offwhite">{step.name}</h3>
+          <h3 className="font-display text-2xl uppercase leading-none tracking-wide text-offwhite md:text-3xl">{step.name}</h3>
           <p className="mt-3 text-sm font-black uppercase tracking-wide text-gold">{step.title}</p>
           {!compact ? <p className="mt-3 text-sm leading-6 text-muted">{step.body}</p> : null}
         </article>

@@ -1,145 +1,130 @@
-import { CheckList } from "@/components/Cards";
-import { Container } from "@/components/Container";
-import { ImagePlaceholder } from "@/components/ImagePlaceholder";
-import { PageHero } from "@/components/PageHero";
 import {
-  GoldCTA,
-  IconCardGrid,
-  MediaTile,
-  MiniTestimonials,
-  ReferenceTitle,
-  SplitVisualFeature,
-  StatStrip
-} from "@/components/ReferenceBlocks";
-import { journey, philosophy, proofCards } from "@/data/site";
-
-const authorityStats = [
-  { value: "1000+", label: "One-To-One Conversations" },
-  { value: "150+", label: "Live Webinars & Workshops" },
-  { value: "15,000+", label: "Professionals Impacted" },
-  { value: "₹10Cr+", label: "High-Ticket Pipeline" }
-];
+  BadgeIndianRupee,
+  BookOpenCheck,
+  BriefcaseBusiness,
+  Gem,
+  Globe2,
+  HandHeart,
+  Landmark,
+  Lightbulb,
+  Medal,
+  Scale,
+  ShieldCheck,
+  Sparkles,
+  Target,
+  TrendingUp,
+  UsersRound
+} from "lucide-react";
+import type { CSSProperties } from "react";
+import {
+  XAccent,
+  XCta,
+  XGrid,
+  XHero,
+  XHeroActions,
+  XMediaCard,
+  XSection,
+  XStats,
+  XTestimonial,
+  XTitle
+} from "@/components/ExactBlocks";
 
 export default function AboutPage() {
   return (
     <>
-      <PageHero
-        eyebrow="About Shobhit"
-        title="From Survival To Strategy"
-        subtitle="The story of Shobhit Singhal and The Transformers Hub."
-        copy="The journey from struggle to building a strategy-led ecosystem for professionals who want to become Modern Chanakyas."
-        imageLabel="Founder seated strategy portrait"
-      />
+      <XHero
+        image="/images/generated/about-hero.png"
+        eyebrow="The founder story"
+        title={<>From survival<br /><XAccent>to strategy</XAccent></>}
+        copy="The story of Shobhit Singhal and how he built The Transformers Hub to help professionals become Modern Chanakyas."
+        imagePosition="center"
+      ><XHeroActions video={false} /></XHero>
 
-      <section className="py-10">
-        <Container>
-          <SplitVisualFeature
-            title="About"
-            accent="Shobhit"
-            imageLabel="Founder journey visual"
-            copy="I did not start with a strategy. I started with struggle. From financial setbacks to career uncertainty, the turning point was learning to solve real problems with clarity, positioning and systems."
-            bullets={["Studied people, markets and problems deeply.", "Built consulting businesses from scratch.", "Now helps professionals create time freedom, financial freedom and real impact."]}
-          />
-        </Container>
-      </section>
-
-      <section className="ref-section py-10">
-        <Container>
-          <ReferenceTitle title="My Journey:" accent="From Struggle To Impact" />
-          <IconCardGrid
-            items={journey.map((item, index) => ({
-              eyebrow: `${2013 + index * 2}`,
-              title: item,
-              body: "A milestone in the shift from pressure and confusion to strategy, systems and consulting impact."
-            }))}
-            columns="sm:grid-cols-2 lg:grid-cols-5"
-          />
-        </Container>
-      </section>
-
-      <section className="py-10">
-        <Container>
-          <div className="grid gap-6 lg:grid-cols-2">
-            <SplitVisualFeature
-              title="Why I Built"
-              accent="The Transformers Hub"
-              imageLabel="Founder speaking visual"
-              copy="I saw talented professionals trapped in jobs they did not love. They had skills but no strategy, worked hard but did not build wealth or freedom."
-            />
-            <div className="premium-panel rounded-sm p-6">
-              <ReferenceTitle title="Mission: Creating" accent="Crorepati Chanakyas" align="left" />
-              <CheckList
-                items={[
-                  "Elevate 10,00,000+ professionals into world-class consultants.",
-                  "Help them build premium consulting businesses with impact and freedom.",
-                  "Create a new India of thinkers, strategists and problem solvers."
-                ]}
-              />
-              <ImagePlaceholder label="Mission chess strategy visual" className="mt-6 min-h-52" />
-            </div>
+      <XSection>
+        <div className="x-split-grid items-center">
+          <XMediaCard image="/images/founder/founder-desk.png" title="Shobhit Singhal" />
+          <div>
+            <XTitle align="left">About <XAccent>Shobhit</XAccent></XTitle>
+            <p className="text-xs leading-6 text-offwhite/75">I did not start with a strategy. I started with struggle. From financial setbacks to career uncertainty, I studied people, markets and systems, learned from mistakes and built digital businesses from scratch.</p>
+            <p className="mt-3 text-xs leading-6 text-offwhite/75">Today, I help ambitious professionals escape average cycles and build high-ticket consulting businesses that create time freedom, financial freedom and real impact.</p>
+            <div className="mt-4"><XGrid columns={5} items={[
+              { title: "Strategist", icon: Target },
+              { title: "Problem solver", icon: ShieldCheck },
+              { title: "Mentor", icon: HandHeart },
+              { title: "Builder", icon: Landmark },
+              { title: "Lifelong learner", icon: BookOpenCheck }
+            ]} /></div>
           </div>
-        </Container>
-      </section>
+        </div>
+      </XSection>
 
-      <section className="ref-section py-10">
-        <Container>
-          <ReferenceTitle title="Authority &" accent="Proof" />
-          <IconCardGrid
-            items={proofCards.map((proof) => ({
-              title: proof.title,
-              body: proof.body
-            }))}
-            columns="sm:grid-cols-2 lg:grid-cols-6"
-            compact
-          />
-          <div className="mt-5">
-            <StatStrip stats={authorityStats} />
+      <XSection>
+        <XTitle>My journey: <XAccent>from struggle to impact</XAccent></XTitle>
+        <XGrid columns={5} items={[
+          { eyebrow: "2013-2016", title: "The struggle years", copy: "Financial challenges, job insecurity and a lack of direction created the search for meaning.", icon: Lightbulb },
+          { eyebrow: "2016-2018", title: "Turning point", copy: "Investment in skills, marketing and mindset built the first digital business.", icon: Sparkles },
+          { eyebrow: "2018-2021", title: "Building & scaling", copy: "Online businesses, high-ticket consulting and systems began to take shape.", icon: TrendingUp },
+          { eyebrow: "2021-2023", title: "Mentoring begins", copy: "One-to-one mentoring and live workshops helped professionals build consulting businesses.", icon: HandHeart },
+          { eyebrow: "2023 onwards", title: "Building the ecosystem", copy: "The Transformers Hub became the home for the Modern Chanakya method.", icon: Globe2 }
+        ]} />
+      </XSection>
+
+      <XSection>
+        <div className="x-split-grid">
+          <div className="x-panel relative overflow-hidden">
+            <XTitle align="left">Why I built <XAccent>The Transformers Hub</XAccent></XTitle>
+            <p>I saw talented professionals trapped in jobs they did not love. They had skills but no strategy, worked hard but did not build wealth or freedom.</p>
+            <p>The Hub exists to help experts transform their skills into high-ticket consulting businesses and become the authority in their niche.</p>
           </div>
-        </Container>
-      </section>
-
-      <section className="py-10">
-        <Container>
-          <ReferenceTitle title="The Modern Chanakya" accent="Philosophy" />
-          <IconCardGrid
-            items={philosophy.map((title) => ({
-              title,
-              body: "A principle for building with clarity, leverage, value and freedom."
-            }))}
-            columns="sm:grid-cols-2 lg:grid-cols-5"
-          />
-        </Container>
-      </section>
-
-      <section className="ref-section py-10">
-        <Container>
-          <ReferenceTitle title="A Glimpse Of The" accent="Journey" />
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
-            {["Speaking", "Training", "Community", "Workshop", "Consulting", "Event"].map((item, index) => (
-              <MediaTile key={item} title={item} assetPath={`/images/stock/gallery-${index + 1}.jpg`} />
-            ))}
+          <div className="x-panel">
+            <XTitle align="left">Mission: creating <XAccent>Crorepati Chanakyas</XAccent></XTitle>
+            <ul className="x-checks">
+              <li><span>✓</span>Elevate professionals into world-class consultants.</li>
+              <li><span>✓</span>Build businesses with impact, freedom and legacy.</li>
+              <li><span>✓</span>Create a new India of thinkers, strategists and problem solvers.</li>
+            </ul>
           </div>
-        </Container>
-      </section>
+        </div>
+      </XSection>
 
-      <section className="py-10">
-        <Container>
-          <ReferenceTitle title="What People" accent="Say" />
-          <MiniTestimonials
-            items={[
-              "Shobhit changed the way I think about business. His strategies are practical and life-changing.",
-              "I went from confused to closing my first high-ticket client in 45 days.",
-              "His frameworks are simple, direct and extremely powerful."
-            ]}
-          />
-        </Container>
-      </section>
+      <XSection>
+        <XTitle>Authority & <XAccent>proof</XAccent></XTitle>
+        <XStats items={[
+          { value: "FOUNDER", label: "The Transformers Hub", icon: Landmark },
+          { value: "DCL", label: "Digital business consultant", icon: BriefcaseBusiness },
+          { value: "1000+", label: "One-to-one conversations", icon: UsersRound },
+          { value: "150+", label: "Live webinars & workshops", icon: Medal },
+          { value: "15,000+", label: "Professionals impacted", icon: Globe2 },
+          { value: "₹10Cr+", label: "Client pipeline generated", icon: BadgeIndianRupee }
+        ]} />
+      </XSection>
 
-      <section className="ref-section py-10">
-        <Container>
-          <GoldCTA title="Your First Step Starts This Weekend." button="Reserve Your Seat Now" />
-        </Container>
-      </section>
+      <XSection>
+        <XTitle>The modern Chanakya <XAccent>philosophy</XAccent></XTitle>
+        <XGrid columns={5} items={[
+          { title: "Strategy over hustle", copy: "Work with clarity, not chaos.", icon: Target },
+          { title: "Leverage over labor", copy: "Build systems that work for you.", icon: TrendingUp },
+          { title: "Value over price", copy: "Position as the solution, not an option.", icon: Gem },
+          { title: "Impact over income", copy: "Create work that changes lives.", icon: HandHeart },
+          { title: "Freedom over everything", copy: "Design the business around life.", icon: Scale }
+        ]} />
+      </XSection>
+
+      <XSection>
+        <XTitle>A glimpse of <XAccent>the journey</XAccent></XTitle>
+        <div className="x-media-grid" style={{ "--x-media-cols": 5 } as CSSProperties}>
+          {["/images/generated/webinar-hero.png", "/images/stock/workshop-community.png", "/images/generated/home-hero.png", "/images/generated/blogs-hero.png", "/images/generated/contact-hero.png"].map((image, index) => (
+            <XMediaCard key={image} image={image} title={["Live teaching", "Community", "Strategy session", "Founder writings", "Consulting room"][index]} />
+          ))}
+        </div>
+      </XSection>
+
+      <XSection>
+        <XTitle>What <XAccent>people say</XAccent></XTitle>
+        <div className="x-testimonial-grid"><XTestimonial /><XTestimonial /><XTestimonial /></div>
+      </XSection>
+
+      <XSection><XCta /></XSection>
     </>
   );
 }

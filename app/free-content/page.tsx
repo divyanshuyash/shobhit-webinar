@@ -1,108 +1,104 @@
-import { GoldButton } from "@/components/Buttons";
-import { Container } from "@/components/Container";
-import { PageHero } from "@/components/PageHero";
 import {
-  ActionCard,
-  GoldCTA,
-  IconCardGrid,
-  MediaTile,
-  ProcessRail,
-  ReferenceTitle,
-  StatStrip
-} from "@/components/ReferenceBlocks";
-import { contentPlatforms } from "@/data/site";
-
-const communityStats = [
-  { value: "15,000+", label: "YouTube Subscribers" },
-  { value: "28,000+", label: "Instagram Followers" },
-  { value: "25,000+", label: "LinkedIn Followers" },
-  { value: "10,000+", label: "Email Community" }
-];
+  Bot,
+  BriefcaseBusiness,
+  Camera,
+  Clapperboard,
+  Download,
+  FileText,
+  Mail,
+  PlayCircle,
+  Rocket
+} from "lucide-react";
+import type { CSSProperties } from "react";
+import {
+  XAccent,
+  XButton,
+  XCta,
+  XGrid,
+  XHero,
+  XHeroActions,
+  XMediaCard,
+  XSection,
+  XStats,
+  XSteps,
+  XTitle
+} from "@/components/ExactBlocks";
 
 export default function FreeContentPage() {
   return (
     <>
-      <PageHero
+      <XHero
+        image="/images/generated/content-hero.png"
         eyebrow="Learn. Apply. Grow."
-        title="Learn From My Free Content"
-        copy="Actionable strategies on consulting, AI, sales, organic leads and business growth to help you build a modern, profitable business."
-        primary="Join The Free Weekend Webinar"
-        imageLabel="Free content studio"
-      />
+        title={<>Learn from my<br /><XAccent>free content</XAccent></>}
+        copy="Actionable strategies on consulting, AI, sales, organic leads and business growth."
+      ><XHeroActions video={false} /></XHero>
 
-      <section className="py-10">
-        <Container>
-          <div className="grid gap-4 md:grid-cols-4">
-            {contentPlatforms.map((platform) => (
-              <ActionCard key={platform.platform} title={platform.platform} body={platform.body} action={platform.cta} href={platform.platform === "Blogs" ? "/blogs" : "#"} />
-            ))}
-          </div>
-        </Container>
-      </section>
+      <XSection>
+        <XGrid columns={4} items={[
+          { title: "YouTube", copy: "In-depth videos on business models, strategy and AI.", icon: Clapperboard, footer: "Watch on YouTube" },
+          { title: "Instagram", copy: "Daily tips, reels and insights on growth and sales.", icon: Camera, footer: "Follow on Instagram" },
+          { title: "LinkedIn", copy: "Thought leadership, case studies and professional insight.", icon: BriefcaseBusiness, footer: "Follow on LinkedIn" },
+          { title: "Blogs", copy: "In-depth articles, frameworks and business guides.", icon: FileText, footer: "Read blogs" }
+        ]} />
+      </XSection>
 
-      <section className="ref-section py-10">
-        <Container>
-          <ReferenceTitle title="Featured" accent="Videos" align="left" />
-          <div className="grid gap-4 md:grid-cols-4">
-            {["Consulting Business Model Explained", "AI Tools Consultants Must Use", "How To Get High-Ticket Clients", "Build Systems Not Just Processes"].map((title, index) => (
-              <MediaTile key={title} title={title} subtitle="Handpicked video to help you grow faster." assetPath={`/images/stock/video-${index + 1}.jpg`} video />
-            ))}
-          </div>
-        </Container>
-      </section>
+      <XSection>
+        <XTitle align="left">Featured videos</XTitle>
+        <div className="x-media-grid" style={{ "--x-media-cols": 4 } as CSSProperties}>
+          <XMediaCard image="/images/founder/founder-webinar.png" title="Consulting business model explained" video label="12:45" />
+          <XMediaCard image="/images/generated/webinar-hero.png" title="AI tools consultants must use" video label="14:32" />
+          <XMediaCard image="/images/generated/home-hero.png" title="How to get high-ticket clients" video label="11:08" />
+          <XMediaCard image="/images/generated/content-hero.png" title="Build systems, not just processes" video label="10:21" />
+        </div>
+      </XSection>
 
-      <section className="py-10">
-        <Container>
-          <ReferenceTitle title="Short-Form" accent="Content" align="left" />
-          <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7">
-            {["One Offer That Sells", "Stop Doing Free Consultations", "Weekly Checklist", "Find Premium Clients", "Automate This", "Value Is The Problem", "Run My Consulting Business"].map((title, index) => (
-              <MediaTile key={title} title={title} assetPath={`/images/stock/reel-${index + 1}.jpg`} video />
-            ))}
-          </div>
-        </Container>
-      </section>
+      <XSection>
+        <XTitle align="left">Short-form content</XTitle>
+        <div className="x-short-grid">
+          {["One offer that sells itself", "Stop doing free consultations", "The consultant's weekly checklist", "3 ways to find premium clients", "Automate this. Save 10+ hours", "Pricing is not the problem", "Perfect your process", "How I run my consulting business"].map((title, index) => (
+            <article key={title}><img src={["/images/generated/blogs-hero.png", "/images/generated/webinar-hero.png", "/images/generated/home-hero.png", "/images/generated/content-hero.png"][index % 4]} alt="" /><span>{title}</span><small>▶ {8.3 + index}K</small></article>
+          ))}
+        </div>
+      </XSection>
 
-      <section className="ref-section py-10">
-        <Container>
-          <ReferenceTitle title="Free" accent="Resources" align="left" />
-          <IconCardGrid
-            items={["Consulting Business Blueprint", "High-Ticket Offer Framework", "Lead Generation Checklist", "Discovery Call Script", "Business Growth Roadmap", "AI Toolkit For Consultants"].map((title) => ({
-              title,
-              body: "Downloadable framework placeholder for the resource library."
-            }))}
-            columns="sm:grid-cols-2 lg:grid-cols-6"
-            compact
-          />
-        </Container>
-      </section>
+      <XSection>
+        <XTitle align="left">Free resources</XTitle>
+        <XGrid columns={6} items={[
+          { title: "Consulting business blueprint", copy: "Step-by-step guide to build your business.", icon: FileText, footer: "Download now" },
+          { title: "High-ticket offer framework", copy: "Create offers premium clients understand.", icon: FileText, footer: "Download now" },
+          { title: "Lead generation checklist", copy: "Organic strategies to attract quality leads.", icon: FileText, footer: "Download now" },
+          { title: "Discovery call script", copy: "A structured script for better calls.", icon: FileText, footer: "Download now" },
+          { title: "Business growth roadmap", copy: "A practical sequence for growth.", icon: FileText, footer: "Download now" },
+          { title: "AI toolkit for consultants", copy: "Tools and prompts to save time.", icon: Bot, footer: "Download now" }
+        ]} />
+      </XSection>
 
-      <section className="py-10">
-        <Container>
-          <ReferenceTitle title="Start" accent="Here" align="left" />
-          <ProcessRail items={["Watch This First", "Grab The Blueprint", "Join The Community", "Attend Webinar", "Build Your Roadmap"]} result="Learn, implement and grow with a clear path." />
-          <div className="mt-5 text-center">
-            <GoldButton>Download Blueprint</GoldButton>
-          </div>
-        </Container>
-      </section>
+      <XSection>
+        <XTitle align="left">Start here</XTitle>
+        <div className="x-panel">
+          <XSteps items={[
+            { title: "Watch this first", copy: "Start with the core business model.", icon: PlayCircle },
+            { title: "Grab the blueprint", copy: "Download the free consulting roadmap.", icon: Download },
+            { title: "Join the community", copy: "Follow the daily implementation journey.", icon: Rocket }
+          ]} />
+        </div>
+      </XSection>
 
-      <section className="ref-section py-10">
-        <Container>
-          <ReferenceTitle title="Join 15,000+ Growth-Minded" accent="Founders & Consultants" />
-          <StatStrip stats={communityStats} />
-          <div className="mt-5 grid gap-4 md:grid-cols-3">
-            {["Community meetup", "Workshop group", "Consulting ecosystem"].map((title, index) => (
-              <MediaTile key={title} title={title} assetPath={`/images/stock/community-${index + 1}.jpg`} />
-            ))}
-          </div>
-        </Container>
-      </section>
+      <XSection>
+        <XTitle align="left">Join <XAccent>15,000+</XAccent> growth-minded founders & consultants</XTitle>
+        <div className="x-split-grid">
+          <XStats items={[
+            { value: "15,000+", label: "YouTube subscribers", icon: Clapperboard },
+            { value: "28,000+", label: "Instagram followers", icon: Camera },
+            { value: "25,000+", label: "LinkedIn followers", icon: BriefcaseBusiness },
+            { value: "10,000+", label: "Email community", icon: Mail }
+          ]} />
+          <div className="x-media-grid"><XMediaCard image="/images/stock/workshop-community.png" title="Community" /><XMediaCard image="/images/generated/webinar-hero.png" title="Live learning" /></div>
+        </div>
+      </XSection>
 
-      <section className="py-10">
-        <Container>
-          <GoldCTA title="Your First Step Starts This Weekend." button="Reserve Your Seat Now" />
-        </Container>
-      </section>
+      <XSection><XCta /></XSection>
     </>
   );
 }

@@ -1,139 +1,106 @@
-import { Container } from "@/components/Container";
-import { ImagePlaceholder } from "@/components/ImagePlaceholder";
-import { PageHero } from "@/components/PageHero";
 import {
-  GoldCTA,
-  IconCardGrid,
-  MediaTile,
-  MiniTestimonials,
-  ReferenceTitle,
-  StatStrip
-} from "@/components/ReferenceBlocks";
-
-const clientCards = [
-  { title: "Ankita Sharma", body: "From scattered focus to a clear niche and stronger client positioning." },
-  { title: "Rohit Mehta", body: "Built confidence around premium pricing and a sharper offer." },
-  { title: "Neha Kapoor", body: "Moved from low confidence to a real consulting roadmap." },
-  { title: "Vivek Sinha", body: "Created a lead and sales system instead of random effort." },
-  { title: "Priya Iyer", body: "Positioned her expertise into a clearer transformation offer." }
-];
-
-const proofStats = [
-  { value: "15,000+", label: "Clients & Community Members" },
-  { value: "₹250Cr+", label: "Client Revenue Generated" },
-  { value: "500+", label: "High-Ticket Offers Launched" },
-  { value: "99%", label: "Client Satisfaction Rate" }
-];
+  BadgeIndianRupee,
+  BrainCircuit,
+  BriefcaseBusiness,
+  Crown,
+  Gem,
+  Goal,
+  MessageCircleMore,
+  Sparkles,
+  Target,
+  TrendingUp,
+  Trophy,
+  UsersRound
+} from "lucide-react";
+import type { CSSProperties } from "react";
+import {
+  XAccent,
+  XCta,
+  XGrid,
+  XHero,
+  XHeroActions,
+  XMediaCard,
+  XSection,
+  XStats,
+  XTestimonial,
+  XTitle
+} from "@/components/ExactBlocks";
 
 export default function TestimonialsPage() {
   return (
     <>
-      <PageHero
+      <XHero
+        image="/images/generated/home-hero.png"
         eyebrow="Proof. Purpose. Impact."
-        title="Real People. Real Clarity. Real Transformations."
-        copy="From niche clarity to high-ticket offers, from confidence breakthroughs to consulting growth. See how clients build purpose-driven businesses."
-        primary="Join The Free Weekend Webinar"
-        imageLabel="Transformation stories visual"
-      />
+        title={<>Real people. Real clarity.<br /><XAccent>Real transformations.</XAccent></>}
+        copy="From niche clarity to high-ticket offers, confidence breakthroughs to consulting growth."
+      ><XHeroActions video={false} /></XHero>
 
-      <section className="py-10">
-        <Container>
-          <ReferenceTitle title="Featured" accent="Video Testimonials" />
-          <div className="grid gap-4 md:grid-cols-3">
-            {["Confusion To 10L Offers", "Niche Clarity That Changed Everything", "Built Confidence And A 6-Figure Business"].map((title, index) => (
-              <MediaTile key={title} title={title} subtitle="Client transformation interview." assetPath={`/images/testimonials/video-${index + 1}.jpg`} video />
-            ))}
-          </div>
-        </Container>
-      </section>
+      <XSection>
+        <XTitle>Featured <XAccent>video testimonials</XAccent></XTitle>
+        <div className="x-media-grid" style={{ "--x-media-cols": 3 } as CSSProperties}>
+          <XMediaCard image="/images/generated/blogs-hero.png" title="From confusion to a clear offer" copy="Verified client video to be added" video label="3:24" />
+          <XMediaCard image="/images/generated/webinar-hero.png" title="Niche clarity changed everything" copy="Verified client video to be added" video label="2:48" />
+          <XMediaCard image="/images/generated/content-hero.png" title="Built confidence and a consulting business" copy="Verified client video to be added" video label="3:07" />
+        </div>
+      </XSection>
 
-      <section className="ref-section py-10">
-        <Container>
-          <ReferenceTitle title="Client" accent="Testimonials" />
-          <IconCardGrid items={clientCards} columns="sm:grid-cols-2 lg:grid-cols-5" />
-        </Container>
-      </section>
+      <XSection>
+        <XTitle>Client <XAccent>testimonials</XAccent></XTitle>
+        <div className="x-testimonial-grid" style={{ "--x-quote-cols": 5 } as CSSProperties}>
+          <XTestimonial /><XTestimonial /><XTestimonial /><XTestimonial /><XTestimonial />
+        </div>
+      </XSection>
 
-      <section className="py-10">
-        <Container>
-          <ReferenceTitle title="Success Stories By" accent="Category" />
-          <IconCardGrid
-            items={["Niche Clarity Results", "High-Ticket Offer Results", "Sales Results", "Confidence Results", "Community Results"].map((title) => ({
-              title,
-              body: "A measurable shift in clarity, confidence, positioning or sales execution."
-            }))}
-            columns="sm:grid-cols-2 lg:grid-cols-5"
-          />
-        </Container>
-      </section>
+      <XSection>
+        <XTitle>Success stories by <XAccent>category</XAccent></XTitle>
+        <XGrid columns={5} items={[
+          { title: "Niche clarity results", copy: "Found their profitable consulting niche.", icon: Target, footer: "Verified result to be added" },
+          { title: "High-ticket offer results", copy: "Created and launched premium offers.", icon: Trophy, footer: "Verified result to be added" },
+          { title: "Sales results", copy: "Built consistent sales conversations.", icon: TrendingUp, footer: "Verified result to be added" },
+          { title: "Confidence results", copy: "Moved past doubt and indecision.", icon: BrainCircuit, footer: "Verified result to be added" },
+          { title: "Community results", copy: "Built collaboration and support.", icon: UsersRound, footer: "Verified result to be added" }
+        ]} />
+      </XSection>
 
-      <section className="ref-section py-10">
-        <Container>
-          <ReferenceTitle title="Love From Clients On" accent="WhatsApp" />
-          <MiniTestimonials
-            items={[
-              "Just closed my first high-ticket client. The framework finally made sense.",
-              "My confidence has skyrocketed. I am showing up like never before.",
-              "Best investment I have made in myself and my business."
-            ]}
-          />
-        </Container>
-      </section>
+      <XSection>
+        <XTitle>Love from clients on <XAccent>WhatsApp</XAccent></XTitle>
+        <div className="x-whatsapp-grid">
+          {["Just closed my first client. Thank you so much!", "The niche clarity session changed my direction completely.", "The framework finally makes sense and feels practical.", "My confidence level has improved so much.", "Grateful to be part of the journey."].map((message) => (
+            <article key={message}><p>{message}</p><span>Verified message screenshot to be added</span></article>
+          ))}
+        </div>
+      </XSection>
 
-      <section className="py-10">
-        <Container>
-          <ReferenceTitle title="Proof In" accent="Numbers" />
-          <StatStrip stats={proofStats} />
-        </Container>
-      </section>
+      <XSection>
+        <XTitle>Proof in <XAccent>numbers</XAccent></XTitle>
+        <XStats items={[
+          { value: "15,000+", label: "Community members", icon: UsersRound },
+          { value: "₹250Cr+", label: "Client revenue generated", icon: BadgeIndianRupee },
+          { value: "500+", label: "High-ticket offers launched", icon: Gem },
+          { value: "₹100Cr+", label: "Offers sold by clients", icon: TrendingUp },
+          { value: "10+", label: "Countries impacted", icon: Crown },
+          { value: "99%", label: "Client satisfaction", icon: Goal }
+        ]} />
+      </XSection>
 
-      <section className="ref-section py-10">
-        <Container>
-          <ReferenceTitle title="Before - After" accent="Case Studies" />
-          <div className="grid gap-4 md:grid-cols-3">
-            {["Ankita Sharma", "Rohit Mehta", "Neha Kapoor"].map((name, index) => (
-              <MediaTile
-                key={name}
-                title={name}
-                subtitle="Before: unclear path. After: sharper niche, offer and roadmap."
-                assetPath={`/images/testimonials/case-${index + 1}.jpg`}
-              />
-            ))}
-          </div>
-        </Container>
-      </section>
+      <XSection>
+        <XTitle>Before - after <XAccent>case studies</XAccent></XTitle>
+        <div className="x-media-grid" style={{ "--x-media-cols": 3 } as CSSProperties}>
+          <XMediaCard image="/images/generated/about-hero.png" title="Leadership consulting transformation" copy="Verified before-and-after case study to be added" />
+          <XMediaCard image="/images/generated/home-hero.png" title="Financial consulting transformation" copy="Verified before-and-after case study to be added" />
+          <XMediaCard image="/images/generated/contact-hero.png" title="Career consulting transformation" copy="Verified before-and-after case study to be added" />
+        </div>
+      </XSection>
 
-      <section className="py-10">
-        <Container>
-          <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
-            <div>
-              <ReferenceTitle title="Payment" accent="Proofs" align="left" />
-              <IconCardGrid
-                items={["₹3,00,000 Received", "₹2,50,000 Received", "₹1,75,000 Received", "₹2,00,000 Received"].map((title) => ({
-                  title,
-                  body: "Real payment proof placeholder ready for verified screenshots."
-                }))}
-                columns="sm:grid-cols-2"
-                compact
-              />
-            </div>
-            <div>
-              <ReferenceTitle title="Client Wins &" accent="Recognition" align="left" />
-              <div className="grid gap-4 md:grid-cols-3">
-                {[1, 2, 3].map((item) => (
-                  <ImagePlaceholder key={item} label={`Recognition gallery ${item}`} className="min-h-52" />
-                ))}
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <XSection>
+        <div className="x-split-grid">
+          <div className="x-panel"><XTitle align="left">Payment proofs</XTitle><div className="x-whatsapp-grid !grid-cols-2"><article><p>Payment proof</p><span>Verified source to be added</span></article><article><p>Payment proof</p><span>Verified source to be added</span></article></div></div>
+          <div className="x-panel"><XTitle align="left">Client wins & recognition</XTitle><div className="x-media-grid"><XMediaCard image="/images/stock/workshop-community.png" title="Recognition gallery" /><XMediaCard image="/images/generated/webinar-hero.png" title="Client win" /></div></div>
+        </div>
+      </XSection>
 
-      <section className="ref-section py-10">
-        <Container>
-          <GoldCTA title="See How They Did It. Now It's Your Turn." button="Reserve Your Seat Now" />
-        </Container>
-      </section>
+      <XSection><XCta title="See how they did it. Now it's your turn." /></XSection>
     </>
   );
 }

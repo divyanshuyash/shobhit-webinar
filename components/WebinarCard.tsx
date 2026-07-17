@@ -1,40 +1,35 @@
 import { GoldButton } from "./Buttons";
+import { GlyphMark } from "./DesignBlocks";
 
 export function WebinarCard({ cta = "Register Now" }: { cta?: string }) {
   return (
-    <aside className="premium-panel rounded-sm p-6">
-      <div className="mb-5 flex items-center justify-between">
-        <p className="text-xs font-black uppercase tracking-[0.2em] text-gold">Free Live Webinar</p>
-        <span className="node-pulse size-3 rounded-full bg-red-500" />
+    <aside className="premium-panel rounded-sm p-7">
+      <div className="mb-4 flex items-center gap-3">
+        <p className="text-[11px] font-black uppercase tracking-[0.2em] text-gold">Free Live Webinar</p>
+        <span className="node-pulse size-2.5 rounded-full bg-red-600 shadow-[0_0_12px_rgba(220,38,38,0.8)]" />
       </div>
-      <h3 className="font-display text-4xl uppercase leading-none tracking-wide text-offwhite">
-        Digital Consultant Launchpad
+      <h3 className="font-display text-4xl uppercase leading-[0.95] tracking-wide text-offwhite">
+        Digital<br />Consultant<br />Launchpad
       </h3>
-      <p className="mt-3 text-base font-semibold text-gold">The Crorepati Consultant Blueprint</p>
-      <div className="my-5 h-px data-stream opacity-60" />
-      <dl className="grid gap-3 text-sm">
-        <div className="flex justify-between gap-4">
-          <dt className="text-muted">Day</dt>
-          <dd className="font-bold text-offwhite">Every Saturday & Sunday</dd>
+      <p className="mt-3 text-[13px] font-semibold tracking-wider text-gold">The Crorepati<br />Consultant Blueprint</p>
+      
+      <div className="my-6 h-px bg-gradient-to-r from-gold/40 via-gold/10 to-transparent" />
+      
+      <div className="grid gap-4">
+        <div className="flex items-center gap-4">
+          <GlyphMark name="calendar" size={22} className="text-gold" />
+          <div>
+            <p className="text-[10px] font-bold tracking-[0.15em] text-muted uppercase">Every</p>
+            <p className="text-xs font-bold uppercase tracking-wider text-offwhite">Saturday & Sunday</p>
+          </div>
         </div>
-        <div className="flex justify-between gap-4">
-          <dt className="text-muted">Time</dt>
-          <dd className="font-bold text-offwhite">11:00 AM</dd>
+        <div className="flex items-center gap-4">
+          <GlyphMark name="clock" size={22} className="text-gold" />
+          <p className="text-xs font-bold uppercase tracking-wider text-offwhite">11:00 AM<br /><span className="text-[10px] text-muted">(IST)</span></p>
         </div>
-        <div className="flex justify-between gap-4">
-          <dt className="text-muted">Mode</dt>
-          <dd className="font-bold text-offwhite">Live Online</dd>
-        </div>
-      </dl>
-      <div className="mt-5 grid grid-cols-3 gap-2">
-        {["Niche", "Offer", "Leads"].map((item) => (
-          <span key={item} className="rounded-sm border border-gold/15 bg-black/45 px-2 py-2 text-center text-[10px] font-black uppercase tracking-wide text-offwhite/75">
-            {item}
-          </span>
-        ))}
       </div>
-      <GoldButton className="mt-6 w-full">{cta}</GoldButton>
-      <p className="mt-4 text-center text-xs uppercase tracking-[0.16em] text-muted">Seats filling fast every weekend</p>
+      
+      <GoldButton className="mt-8 w-full">{cta}</GoldButton>
     </aside>
   );
 }

@@ -4,68 +4,96 @@ type StockImage = {
   tag: string;
 };
 
-const imageUrl = (id: string, width = 1400) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${width}&q=82`;
-
 const stockImages = {
+  hero: {
+    alt: "Shobhit Singhal founder portrait",
+    tag: "Founder Hero",
+    url: "/images/founder-source/founder-cutout.png"
+  },
+  desk: {
+    alt: "Shobhit Singhal portrait photo",
+    tag: "Founder Desk",
+    url: "/images/founder-source/founder-portrait.jpg"
+  },
+  speaking: {
+    alt: "Shobhit Singhal founder portrait",
+    tag: "Founder Webinar",
+    url: "/images/founder-source/founder-cutout.png"
+  },
+  workshop: {
+    alt: "Premium consulting workshop with a mentor presenting to an audience",
+    tag: "Workshop Visual",
+    url: "/images/stock/workshop-community.png"
+  },
+  strategy: {
+    alt: "Gold chess king, notebook, and strategy desk for consulting systems",
+    tag: "Strategy Visual",
+    url: "/images/stock/strategy-still-life.png"
+  },
   founder: {
-    alt: "Business strategist working with a consulting team",
+    alt: "Shobhit Singhal founder portrait",
     tag: "Founder Visual",
-    url: imageUrl("photo-1551836022-d5d88e9218df")
+    url: "/images/founder-source/founder-cutout.png"
   },
   webinar: {
-    alt: "Strategy workshop with a presenter and audience",
+    alt: "Shobhit Singhal founder portrait",
     tag: "Webinar Visual",
-    url: imageUrl("photo-1517245386807-bb43f82c33c4")
+    url: "/images/founder-source/founder-cutout.png"
   },
   proof: {
-    alt: "Consulting presentation and client discussion",
+    alt: "Premium consulting workshop with a mentor presenting to an audience",
     tag: "Proof Visual",
-    url: imageUrl("photo-1552664730-d307ca884978")
+    url: "/images/stock/workshop-community.png"
   },
   community: {
-    alt: "Professional community collaborating around a table",
+    alt: "Premium consulting workshop with a mentor presenting to an audience",
     tag: "Community Visual",
-    url: imageUrl("photo-1521737604893-d14cc237f11d")
+    url: "/images/stock/workshop-community.png"
   },
   writing: {
-    alt: "Notebook and laptop for business writing",
+    alt: "Shobhit Singhal portrait photo",
     tag: "Article Visual",
-    url: imageUrl("photo-1499750310107-5fef28a66643")
+    url: "/images/founder-source/founder-portrait.jpg"
   },
   systems: {
-    alt: "Business dashboard with analytics and strategy data",
+    alt: "Gold chess king, notebook, and strategy desk for consulting systems",
     tag: "System Visual",
-    url: imageUrl("photo-1460925895917-afdab827c52f")
+    url: "/images/stock/strategy-still-life.png"
   },
   content: {
-    alt: "Video production setup for online learning content",
+    alt: "Shobhit Singhal founder portrait",
     tag: "Content Visual",
-    url: imageUrl("photo-1492724441997-5dc865305da7")
+    url: "/images/founder-source/founder-cutout.png"
   },
   contact: {
-    alt: "Team collaborating on digital strategy",
+    alt: "Shobhit Singhal founder portrait",
     tag: "Connect Visual",
-    url: imageUrl("photo-1519389950473-47ba0277781c")
+    url: "/images/founder-source/founder-cutout.png"
   }
 } satisfies Record<string, StockImage>;
 
 export function getStockImage(label: string, assetPath = ""): StockImage {
   const text = `${label} ${assetPath}`.toLowerCase();
 
-  if (text.includes("blog") || text.includes("writing") || text.includes("article")) return stockImages.writing;
+  if (text.includes("desk") || text.includes("writing") || text.includes("free content") || text.includes("article")) return stockImages.desk;
+  if (text.includes("case") || text.includes("map")) return stockImages.systems;
+  if (text.includes("founder") || text.includes("portrait") || text.includes("contact") || text.includes("about") || text.includes("transformation stories")) {
+    return stockImages.hero;
+  }
+  if (text.includes("strategy") || text.includes("framework") || text.includes("roadmap") || text.includes("chess") || text.includes("mission")) {
+    return stockImages.strategy;
+  }
+  if (text.includes("stage") || text.includes("speaking") || text.includes("event") || text.includes("workshop") || text.includes("community") || text.includes("gallery")) {
+    return stockImages.workshop;
+  }
   if (text.includes("video") || text.includes("webinar") || text.includes("reel") || text.includes("youtube") || text.includes("session")) {
     return stockImages.webinar;
   }
   if (text.includes("testimonial") || text.includes("feedback") || text.includes("proof") || text.includes("payment") || text.includes("screenshot")) {
     return stockImages.proof;
   }
-  if (text.includes("community") || text.includes("gallery") || text.includes("stage") || text.includes("speaking") || text.includes("event")) {
-    return stockImages.community;
-  }
-  if (text.includes("framework") || text.includes("case") || text.includes("roadmap") || text.includes("map")) return stockImages.systems;
+  if (text.includes("blog")) return stockImages.strategy;
   if (text.includes("contact") || text.includes("support")) return stockImages.contact;
-  if (text.includes("founder") || text.includes("portrait") || text.includes("about")) return stockImages.founder;
 
   return stockImages.content;
 }

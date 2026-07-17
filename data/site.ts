@@ -2,56 +2,51 @@ export const problems = [
   "No clear niche",
   "No premium offer",
   "No consulting structure",
-  "No lead generation system",
+  "No lead system",
   "No personal brand",
-  "No practical AI-powered execution system"
+  "No AI execution system"
 ];
 
 export const modernChanakyas = [
-  "Corporate professional advising others in career growth",
-  "Sales leader helping businesses increase revenue",
-  "Teacher helping schools and students grow",
-  "Finance expert helping people manage money",
-  "Marketing professional helping businesses generate leads",
-  "Senior professional helping the next generation grow faster"
+  "Corporate Professionals",
+  "Sales Leaders",
+  "Teachers & Trainers",
+  "Finance Experts",
+  "Marketing Professionals",
+  "Experienced Professionals"
 ];
 
 export const webinarOutcomes = [
-  "How To Find Your Consulting Niche",
-  "How To Create A High-Ticket Consulting Offer",
-  "How To Attract Organic Leads",
-  "How To Close Premium Clients Through 1:1 Conversations",
-  "How To Use AI In Your Consulting Business",
-  "How To Build Towards ₹1 Crore As A Consultant"
+  "How to identify a profitable consulting niche",
+  "How to create a high-ticket consulting offer",
+  "The DCL Framework explained",
+  "How to get high-quality leads consistently",
+  "How to use AI to deliver better results",
+  "Your ₹1 Crore Consultant Roadmap"
 ];
 
 export const webinarFor = [
-  "You are a corporate professional and want to start something of your own.",
-  "You have knowledge but don’t know how to monetize it.",
-  "You want to create a side hustle without quitting your job immediately.",
-  "You are a coach, trainer, healer, teacher, consultant, or expert.",
-  "You want to create a high-ticket offer.",
-  "You are tired of low-paying clients.",
-  "You want to use AI but don’t know where to start.",
-  "You want to build a personal brand.",
-  "You want to become known for solving one specific problem.",
-  "You want to eventually build a ₹1 crore consulting business."
+  "You have expertise but don't know how to monetize it.",
+  "You want to start consulting alongside your job.",
+  "You want to build a location-independent business.",
+  "You are serious about creating a premium consulting offer.",
+  "You want a proven roadmap, not random tactics."
 ];
 
 export const notFor = [
   "You want overnight money.",
   "You are not willing to speak to people.",
-  "You don’t want to work on your clarity.",
+  "You don't want to work on your clarity.",
   "You are looking for a shortcut without execution.",
   "You only want passive income without building trust."
 ];
 
 export const proofCards = [
-  { title: "Founder", body: "The Transformers Hub", note: "Built around strategy, systems, and consulting clarity" },
-  { title: "Digital Business Consultant", body: "Consulting direction and offer clarity", note: "Positioning for experts, coaches, and professionals" },
-  { title: "Consultant of Consultants", body: "Mentors coaches, trainers, educators, professionals, and experts", note: "Focused on practical offer and lead systems" },
-  { title: "1000+ Conversations", body: "One-to-one consulting conversations mentioned in the brief", note: "Grounded in real market conversations" },
-  { title: "10 Lakh Challenge", body: "Creator of the 10 Lakh Challenge", note: "Built for focused business execution" },
+  { title: "Founder", body: "The Transformers Hub", note: "Verified asset reserved" },
+  { title: "Digital Business Consultant", body: "Helps professionals build premium advisory offers", note: "Verified asset reserved" },
+  { title: "Consultant of Consultants", body: "Mentors coaches, trainers, experts, and business owners", note: "Verified asset reserved" },
+  { title: "1000+ Conversations", body: "One-to-one consulting conversations mentioned in the brief", note: "Supporting source reserved" },
+  { title: "10 Lakh Challenge", body: "Creator of the 10 Lakh Challenge as referenced in the brief", note: "Verified asset reserved" },
   { title: "Mission", body: "Creating Crorepati Chanakyas", note: "Mission statement from brief" }
 ];
 
@@ -108,26 +103,26 @@ export const aiBenefits = [
 
 export const contentPlatforms = [
   {
-    title: "Watch My Business Strategy Videos",
     platform: "YouTube",
+    title: "Watch My Business Strategy Videos",
     body: "Learn niche clarity, high-ticket consulting, organic lead generation, sales, mindset, and business growth.",
     cta: "Visit YouTube"
   },
   {
-    title: "Daily Business Insights",
     platform: "Instagram",
+    title: "Daily Business Insights",
     body: "Follow thoughts, stories, client learnings, event updates, and high-ticket consulting lessons.",
     cta: "Follow On Instagram"
   },
   {
-    title: "Professional Business Lessons",
     platform: "LinkedIn",
+    title: "Professional Business Lessons",
     body: "Read deeper thoughts on consulting, leadership, corporate freedom, and business growth.",
     cta: "Connect On LinkedIn"
   },
   {
-    title: "Read My Personal Blogs",
     platform: "Blogs",
+    title: "Read My Personal Blogs",
     body: "Lessons on consulting, money, mindset, business, sales, spirituality, and becoming a Modern Chanakya.",
     cta: "Read Blogs"
   }
@@ -199,7 +194,7 @@ export const philosophy = [
   "Leverage Over Labor",
   "Value Over Price",
   "Impact Over Income",
-  "Freedom With Responsibility"
+  "Freedom Over Everything"
 ];
 
 export const journey = [

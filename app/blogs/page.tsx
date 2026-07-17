@@ -1,109 +1,95 @@
-import { GoldSubmitButton, OutlineButton } from "@/components/Buttons";
-import { Container } from "@/components/Container";
-import { ImagePlaceholder } from "@/components/ImagePlaceholder";
-import { PageHero } from "@/components/PageHero";
-import { GoldCTA, MediaTile, ReferenceTitle } from "@/components/ReferenceBlocks";
-import { blogCategories, blogs } from "@/data/site";
+import {
+  Bot,
+  BrainCircuit,
+  BriefcaseBusiness,
+  Crown,
+  DollarSign,
+  Mail,
+  MonitorUp,
+  NotebookPen,
+  Sparkles,
+  Target
+} from "lucide-react";
+import type { CSSProperties } from "react";
+import {
+  XAccent,
+  XButton,
+  XCta,
+  XGrid,
+  XHero,
+  XHeroActions,
+  XMediaCard,
+  XSection,
+  XTitle
+} from "@/components/ExactBlocks";
+
+const articles = [
+  ["/images/stock/strategy-still-life.png", "Chanakya on competition", "Why most consultants lose without a strategy"],
+  ["/images/generated/blogs-hero.png", "High-ticket consulting", "How to build an offer that sells"],
+  ["/images/generated/webinar-hero.png", "Sales psychology", "The psychology behind premium buying decisions"],
+  ["/images/generated/content-hero.png", "AI for consultants", "10 ways AI can multiply your consulting business"],
+  ["/images/generated/contact-hero.png", "Corporate freedom", "Design a business that buys your freedom"],
+  ["/images/founder/founder-desk.png", "Personal brand", "Build a personal brand around useful thinking"],
+  ["/images/generated/home-hero.png", "Bhagavad Gita & business", "Timeless lessons every consultant should know"],
+  ["/images/generated/about-hero.png", "Client case studies", "How a consultant can scale with clarity"]
+];
 
 export default function BlogsPage() {
   return (
     <>
-      <PageHero
+      <XHero
+        mode="editorial"
+        image="/images/generated/blogs-hero.png"
         eyebrow="Insights. Strategy. Freedom."
-        title="Shobhit's Writings"
-        subtitle="Business, Consulting, Money, Mindset & Modern Chanakya Thinking"
-        copy="A premium thought-leadership hub for consulting, AI, sales, organic leads, personal brand and Modern Chanakya thinking."
-        primary="Join The Free Weekend Webinar"
-        imageLabel="Founder writing desk"
-      />
+        title={<>Shobhit's <XAccent>writings</XAccent></>}
+        copy="Business, consulting, money, mindset and Modern Chanakya thinking."
+      ><XHeroActions video={false} /></XHero>
 
-      <section className="py-10">
-        <Container>
-          <div className="premium-panel grid overflow-hidden rounded-sm lg:grid-cols-[0.9fr_1fr]">
-            <ImagePlaceholder label="Featured article visual" assetPath="/images/blog/blog-1.jpg" className="min-h-80 rounded-none border-0" />
-            <div className="p-6 md:p-10">
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-gold">Featured Article</p>
-              <h2 className="mt-4 font-display text-4xl uppercase leading-none tracking-wide text-offwhite md:text-6xl">
-                The New Consulting Game: Why High-Ticket Is The Only Sustainable Path
-              </h2>
-              <p className="mt-5 text-base leading-7 text-muted">
-                The market is flooded with consultants trading hours for money. The future belongs to people who build sharper offers, stronger systems and lasting transformation.
-              </p>
-              <OutlineButton className="mt-6">Read Featured Article</OutlineButton>
-            </div>
+      <XSection>
+        <div className="x-split-grid x-panel !p-0 overflow-hidden">
+          <div className="relative min-h-[300px]"><XMediaCard image="/images/founder/founder-desk.png" title="" /></div>
+          <div className="flex flex-col justify-center p-7">
+            <p className="mb-3 text-[9px] font-black uppercase text-gold">Featured article</p>
+            <h2 className="font-display text-4xl uppercase leading-none">The new consulting game: why high-ticket is the only sustainable path</h2>
+            <p className="mt-4 text-xs leading-6 text-muted">The future belongs to consultants who build high-ticket offers, deliver transformational results and design a life of true freedom.</p>
+            <div className="mt-5"><XButton>Read featured article</XButton></div>
           </div>
-        </Container>
-      </section>
+        </div>
+      </XSection>
 
-      <section className="ref-section py-7">
-        <Container>
-          <div className="flex flex-wrap gap-3">
-            {["All", ...blogCategories].map((category) => (
-              <button key={category} type="button" className="rounded-sm border border-gold/25 px-4 py-3 text-xs font-black uppercase tracking-wide text-offwhite transition hover:border-gold hover:text-gold">
-                {category}
-              </button>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <XSection className="!py-3">
+        <div className="x-category-row">
+          {["All", "High-Ticket Consulting", "Organic Lead Generation", "Sales Psychology", "AI for Consultants", "Corporate Freedom", "Personal Brand", "Chanakya Strategy", "Client Case Studies"].map((category, index) => <button key={category} className={index === 0 ? "is-active" : ""}>{category}</button>)}
+        </div>
+      </XSection>
 
-      <section className="py-10">
-        <Container>
-          <ReferenceTitle title="All" accent="Articles" align="left" />
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {blogs.slice(0, 8).map((blog, index) => (
-              <MediaTile
-                key={blog}
-                title={blog}
-                subtitle={`${6 + (index % 3)} min read. Consulting, strategy and Modern Chanakya thinking.`}
-                assetPath={`/images/blog/blog-${index + 1}.jpg`}
-              />
-            ))}
-          </div>
-        </Container>
-      </section>
+      <XSection>
+        <XTitle align="left">All articles</XTitle>
+        <div className="x-media-grid" style={{ "--x-media-cols": 4 } as CSSProperties}>
+          {articles.map(([image, label, title]) => <XMediaCard key={title} image={image} title={title} copy={label} />)}
+        </div>
+      </XSection>
 
-      <section className="ref-section py-10">
-        <Container>
-          <ReferenceTitle title="Popular" accent="Articles" align="left" />
-          <div className="grid gap-4 md:grid-cols-5">
-            {blogs.slice(0, 5).map((blog, index) => (
-              <article key={blog} className="premium-panel rounded-sm p-4">
-                <div className="mb-4 flex items-center gap-3">
-                  <span className="flex size-8 items-center justify-center rounded-sm bg-gold font-black text-black">{index + 1}</span>
-                  <ImagePlaceholder label={`Popular article ${index + 1}`} className="min-h-20 flex-1" />
-                </div>
-                <h3 className="text-sm font-black leading-5 text-offwhite">{blog}</h3>
-                <p className="mt-3 text-xs uppercase tracking-wide text-muted">6 min read</p>
-              </article>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <XSection>
+        <XTitle align="left">Popular articles</XTitle>
+        <XGrid columns={5} numbered items={[
+          { title: "Three shifts that take you from struggling to high-ticket", icon: NotebookPen },
+          { title: "Pricing psychology: how to charge what you're worth", icon: DollarSign },
+          { title: "Why niching down makes you more money", icon: Target },
+          { title: "Content strategy for consultants", icon: MonitorUp },
+          { title: "Mindset mastery for entrepreneurs", icon: BrainCircuit }
+        ]} />
+      </XSection>
 
-      <section className="py-10">
-        <Container>
-          <div className="premium-panel rounded-sm p-6 md:p-8">
-            <div className="grid gap-6 md:grid-cols-[1fr_1fr] md:items-center">
-              <div>
-                <h2 className="font-display text-4xl uppercase leading-none text-offwhite">Get Weekly Insights That <span className="gold-gradient-text">Grow Your Business</span></h2>
-                <p className="mt-3 text-muted">Actionable strategies on high-ticket consulting, lead generation, sales psychology and freedom.</p>
-              </div>
-              <form className="grid gap-3 sm:grid-cols-[1fr_auto]">
-                <label className="sr-only" htmlFor="newsletter-email">Email address</label>
-                <input id="newsletter-email" type="email" placeholder="Enter your email address" className="rounded-sm border border-gold/20 bg-black px-4 py-3 text-sm text-offwhite outline-none focus:border-gold" />
-                <GoldSubmitButton>Send Me Insights</GoldSubmitButton>
-              </form>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <XSection>
+        <div className="x-panel flex flex-col items-center gap-5 md:flex-row">
+          <Mail size={38} className="text-gold" />
+          <div className="flex-1"><h3>Get weekly insights that <XAccent>grow your business</XAccent></h3><p className="!mb-0">Actionable strategies on consulting, leads, sales psychology and freedom.</p></div>
+          <div className="flex w-full max-w-md"><input className="x-input rounded-r-none" placeholder="Enter your email address" /><button className="x-button rounded-l-none">Send me insights</button></div>
+        </div>
+      </XSection>
 
-      <section className="ref-section py-10">
-        <Container>
-          <GoldCTA title="Your First Step Starts This Weekend." button="Reserve Your Seat Now" />
-        </Container>
-      </section>
+      <XSection><XCta /></XSection>
     </>
   );
 }

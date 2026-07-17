@@ -4,6 +4,9 @@ export const brand = {
   name: "Shobhit Singhal",
   hub: "The Transformers Hub",
   monogram: "SS",
+  email: "Contact email to be added",
+  phone: "Contact number to be added",
+  location: "New Delhi, India",
   oneLiner:
     "Helping professionals, experts, coaches, and consultants become Modern Chanakyas by building high-ticket consulting businesses using knowledge, strategy, and AI.",
   disclaimer:
