@@ -18,7 +18,6 @@ import {
   Megaphone,
   Newspaper,
   PackageCheck,
-  Play,
   Presentation,
   ScanSearch,
   Target,
@@ -28,6 +27,7 @@ import {
 } from "lucide-react";
 import { FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import { Reveal } from "@/components/ExactMotion";
+import { HomeIntroVideo } from "@/components/HomeIntroVideo";
 import {
   XAccent,
   XButton,
@@ -151,7 +151,7 @@ export default function HomePage() {
               <strong>Build a premium, freedom-first business with a clear niche, a valuable offer, consistent leads and AI-powered leverage.</strong>
               <div className="home-hero-actions">
                 <XButton>Reserve my free seat</XButton>
-                <XButton quiet href="#intro-video">Watch 3-minute introduction</XButton>
+                <XButton quiet href="#intro-video">Watch introduction</XButton>
               </div>
             </div>
           </Reveal>
@@ -160,17 +160,13 @@ export default function HomePage() {
 
       <XSection className="home-intro-section">
         <article id="intro-video" className="home-intro-card">
-          <div className="home-intro-media">
-            <Image src="/images/founder/founder-webinar.png" alt="Shobhit introducing the webinar" fill sizes="(max-width: 760px) 100vw, 44vw" />
-            <button type="button" aria-label="Play the webinar introduction"><Play size={25} fill="currentColor" /></button>
-            <span>03:18</span>
-          </div>
           <div className="home-intro-copy">
-            <p>Start here · 3 minute orientation</p>
-            <h2>Watch this before you <XAccent>join the webinar</XAccent></h2>
-            <span>See what the Digital Consultant Launchpad is, who it is designed for, and the exact clarity you should expect to leave with.</span>
-            <div className="home-intro-points"><b>01 · The opportunity</b><b>02 · The framework</b><b>03 · Your next step</b></div>
-            <XButton quiet href="#learn">Play introduction</XButton>
+            <p>Digital Consultant Launchpad</p>
+            <h2>Start with the <XAccent>introduction.</XAccent></h2>
+            <span>A short message from Shobhit on the opportunity, the framework, and what you will learn in the free webinar.</span>
+          </div>
+          <div className="home-intro-media">
+            <HomeIntroVideo />
           </div>
         </article>
       </XSection>

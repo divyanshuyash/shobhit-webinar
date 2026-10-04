@@ -1,4 +1,4 @@
-export const WEBINAR_URL = "#";
+export const WEBINAR_URL = "https://learn.transformershub.in/web/checkout/6ac2a21f18f15f47c4255a8d";
 
 export const brand = {
   name: "Shobhit Singhal",
