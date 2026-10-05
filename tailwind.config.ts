@@ -12,6 +12,10 @@ const config: Config = {
         black: "#0B0B0B",
         charcoal: "#161616",
         gold: "#D9A520",
+        conclave: {
+          gold: "#D9A520",
+          offwhite: "#F3F3F3"
+        },
         electric: "#D9A520",
         mint: "#E7BE4F",
         offwhite: "#F3F3F3",

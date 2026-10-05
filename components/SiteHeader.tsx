@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ArrowRight, Menu, X } from "lucide-react";
-import { brand, WEBINAR_URL } from "@/data/constants";
+import { WEBINAR_URL } from "@/data/constants";
 import { navigation } from "@/data/navigation";
 import { BrandMark } from "./BrandMark";
 
@@ -27,7 +27,6 @@ export function SiteHeader() {
         <div className="x-site-header-inner">
           <Link href="/" className="x-site-brand" aria-label="Shobhit Singhal home">
             <span><BrandMark /></span>
-            <div><strong>{brand.name}</strong><small>{brand.hub}</small></div>
           </Link>
           <nav className="x-site-nav" aria-label="Primary navigation">
             {navigation.map((item) => (

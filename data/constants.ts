@@ -4,7 +4,7 @@ export const brand = {
   name: "Shobhit Singhal",
   hub: "The Transformers Hub",
   monogram: "SS",
-  email: "Contact email to be added",
+  email: "sshobhit93@gmail.com",
   phone: "Contact number to be added",
   location: "New Delhi, India",
   oneLiner:

@@ -4,7 +4,6 @@ export const navigation = [
   { label: "Webinar", href: "/webinar" },
   { label: "Framework", href: "/framework" },
   { label: "Testimonials", href: "/testimonials" },
-  { label: "Blogs", href: "/blogs" },
   { label: "Free Content", href: "/free-content" },
   { label: "Contact", href: "/contact" }
 ];

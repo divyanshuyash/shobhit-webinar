@@ -26,7 +26,6 @@ import {
   XGrid,
   XSection,
   XSteps,
-  XTestimonial,
   XTitle,
   XWrap
 } from "@/components/ExactBlocks";
@@ -99,15 +98,6 @@ export default function FrameworkPage() {
           { title: "AI-powered execution", copy: "Use tools and automation to work faster.", icon: Bot },
           { title: "Results that compound", copy: "Each pillar strengthens the next.", icon: ChartNoAxesCombined }
         ]} />
-      </XSection>
-
-      <XSection>
-        <XTitle>Transformation in action</XTitle>
-        <div className="x-testimonial-grid">
-          <XTestimonial image="/images/editorial/testimonial-leadership.png" />
-          <XTestimonial image="/images/editorial/testimonial-finance.png" />
-          <XTestimonial image="/images/editorial/testimonial-career.png" />
-        </div>
       </XSection>
 
       <XSection><XCta title="Attend the free live webinar" copy="Learn the exact five-step framework to build your consulting business." /></XSection>

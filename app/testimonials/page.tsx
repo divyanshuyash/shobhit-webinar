@@ -1,14 +1,5 @@
-import {
-  BadgeDollarSign,
-  BadgeIndianRupee,
-  BrainCircuit,
-  ChartNoAxesCombined,
-  Crosshair,
-  Crown,
-  Gem,
-  Goal,
-  UsersRound
-} from "lucide-react";
+import Image from "next/image";
+import { BadgeDollarSign, BrainCircuit, ChartNoAxesCombined, Crosshair, UsersRound } from "lucide-react";
 import type { CSSProperties } from "react";
 import {
   XAccent,
@@ -18,10 +9,37 @@ import {
   XHeroActions,
   XMediaCard,
   XSection,
-  XStats,
-  XTestimonial,
   XTitle
 } from "@/components/ExactBlocks";
+import { Testimonials } from "@/components/Testimonials";
+import { AnimatedPhotoShowcase, type ShowcasePhoto } from "@/components/ui/animated-photo-showcase";
+import { VideoPreview } from "@/components/VideoPreview";
+import { testimonialVideos } from "@/data/testimonialVideos";
+
+const conclaveReels = [
+  { src: "https://github.com/divyanshuyash/shobhit-webinar/releases/download/video-v1/Shobhit.Reel.1.Award.Reel.2.mp4", title: "Awards & recognition" },
+  { src: "https://github.com/divyanshuyash/shobhit-webinar/releases/download/video-v1/Shobhit.Reel.2.Entry.1.mp4", title: "Entering the conclave" },
+  { src: "https://github.com/divyanshuyash/shobhit-webinar/releases/download/video-v1/Shobhit.Reel.3.Speakers.1.mp4", title: "Conclave speakers" }
+];
+
+const clientWinPhotos: ShowcasePhoto[] = [
+  { src: "/images/client-wins/MCP06530.jpg", alt: "Transformers Hub members celebrating with their awards" },
+  { src: "/images/client-wins/MCP06631.jpg", alt: "Shobhit Singhal presenting a community award" },
+  { src: "/images/client-wins/MCP06673.jpg", alt: "A heartfelt award celebration between community members" },
+  { src: "/images/client-wins/MCP06678.jpg", alt: "Shobhit Singhal and a recipient holding a Chanakya award" },
+  { src: "/images/client-wins/MCP06692.jpg", alt: "Shobhit Singhal presenting a recognition plaque" },
+  { src: "/images/client-wins/MCP06733.jpg", alt: "A community member celebrating with a Chanakya award" },
+  { src: "/images/client-wins/MCP06741.jpg", alt: "Shobhit Singhal and a community member holding a trophy" },
+  { src: "/images/client-wins/MCP06774.jpg", alt: "Transformers Hub community celebrating together" },
+  { src: "/images/client-wins/MUK00264.jpg", alt: "Shobhit Singhal celebrating alongside the community" },
+  { src: "/images/client-wins/MUK00375.jpg", alt: "Chanakya Conclave award recipients with Shobhit Singhal" },
+  { src: "/images/founder/MUK00277.jpg", alt: "Community members sharing a reflective moment at Chanakya Conclave" },
+  { src: "/images/founder/MUK00449.jpg", alt: "Transformers Hub community celebrating together" },
+  { src: "/images/founder/MUK08210.jpg", alt: "Shobhit Singhal celebrating with the Transformers Hub community" },
+  { src: "/images/founder/MUK07929.jpg", alt: "A heartfelt celebration between Transformers Hub community members" },
+  { src: "/images/modern-chanakya/MUK08418.jpg", alt: "A Transformers Hub member sharing her story on stage" },
+  { src: "/images/founder/MUK09044.jpg", alt: "A Transformers Hub community discussion in action" }
+];
 
 export default function TestimonialsPage() {
   return (
@@ -35,23 +53,18 @@ export default function TestimonialsPage() {
 
       <XSection>
         <XTitle>Featured <XAccent>video testimonials</XAccent></XTitle>
-        <div className="x-media-grid" style={{ "--x-media-cols": 3 } as CSSProperties}>
-          <XMediaCard image="/images/editorial/testimonial-leadership.png" title="From confusion to a clear offer" copy="Illustrative preview · verified client video to be added" video label="3:24" />
-          <XMediaCard image="/images/editorial/testimonial-finance.png" title="Niche clarity changed everything" copy="Illustrative preview · verified client video to be added" video label="2:48" />
-          <XMediaCard image="/images/editorial/testimonial-career.png" title="Built confidence and a consulting business" copy="Illustrative preview · verified client video to be added" video label="3:07" />
+        <div className="x-media-grid x-media-grid-compact" style={{ "--x-media-cols": 4 } as CSSProperties}>
+          <XMediaCard image="/images/editorial/testimonial-leadership.png" title="See the Transformers Hub experience in action" copy="Community testimonial" videoSrc={testimonialVideos[0].src} />
+          <XMediaCard image="/images/editorial/testimonial-leadership.png" title="From confusion to a clear offer" copy="Community testimonial" videoSrc={testimonialVideos[1].src} />
+          <XMediaCard image="/images/editorial/testimonial-finance.png" title="Niche clarity changed everything" copy="Community testimonial" videoSrc={testimonialVideos[2].src} />
+          <XMediaCard image="/images/editorial/testimonial-career.png" title="Built confidence and a consulting business" copy="Community testimonial" videoSrc={testimonialVideos[3].src} />
         </div>
       </XSection>
 
-      <XSection>
-        <XTitle>Client <XAccent>testimonials</XAccent></XTitle>
-        <div className="x-testimonial-grid" style={{ "--x-quote-cols": 5 } as CSSProperties}>
-          <XTestimonial image="/images/editorial/testimonial-leadership.png" />
-          <XTestimonial image="/images/editorial/testimonial-finance.png" />
-          <XTestimonial image="/images/editorial/testimonial-career.png" />
-          <XTestimonial image="/images/editorial/testimonial-leadership.png" />
-          <XTestimonial image="/images/editorial/testimonial-finance.png" />
-        </div>
-      </XSection>
+      <div className="testimonial-duo">
+        <Testimonials variant="paired" />
+        <AnimatedPhotoShowcase photos={clientWinPhotos} autoRotateInterval={4000} />
+      </div>
 
       <XSection>
         <XTitle>Success stories by <XAccent>category</XAccent></XTitle>
@@ -65,39 +78,27 @@ export default function TestimonialsPage() {
       </XSection>
 
       <XSection>
-        <XTitle>Love from clients on <XAccent>WhatsApp</XAccent></XTitle>
-        <div className="x-whatsapp-grid">
-          {["Just closed my first client. Thank you so much!", "The niche clarity session changed my direction completely.", "The framework finally makes sense and feels practical.", "My confidence level has improved so much.", "Grateful to be part of the journey."].map((message) => (
-            <article key={message}><p>{message}</p><span>Verified message screenshot to be added</span></article>
+        <XTitle>Glimpse of <XAccent>Chanakya Conclave</XAccent></XTitle>
+        <div className="x-conclave-reel-grid">
+          {conclaveReels.map(({ src, title }) => (
+            <article className="x-conclave-reel-card" key={src}>
+              <VideoPreview src={src} title={title} />
+              <p>{title}</p>
+            </article>
           ))}
         </div>
       </XSection>
 
       <XSection>
-        <XTitle>Proof in <XAccent>numbers</XAccent></XTitle>
-        <XStats items={[
-          { value: "15,000+", label: "Community members", icon: UsersRound },
-          { value: "₹250Cr+", label: "Client revenue generated", icon: BadgeIndianRupee },
-          { value: "500+", label: "High-ticket offers launched", icon: Gem },
-          { value: "₹100Cr+", label: "Offers sold by clients", icon: ChartNoAxesCombined },
-          { value: "10+", label: "Countries impacted", icon: Crown },
-          { value: "99%", label: "Client satisfaction", icon: Goal }
-        ]} />
-      </XSection>
-
-      <XSection>
-        <XTitle>Before - after <XAccent>case studies</XAccent></XTitle>
-        <div className="x-media-grid" style={{ "--x-media-cols": 3 } as CSSProperties}>
-          <XMediaCard image="/images/editorial/testimonial-leadership.png" title="Leadership consulting transformation" copy="Illustrative preview · verified case study to be added" />
-          <XMediaCard image="/images/editorial/testimonial-finance.png" title="Financial consulting transformation" copy="Illustrative preview · verified case study to be added" />
-          <XMediaCard image="/images/editorial/testimonial-career.png" title="Career consulting transformation" copy="Illustrative preview · verified case study to be added" />
-        </div>
-      </XSection>
-
-      <XSection>
         <div className="x-split-grid">
-          <div className="x-panel"><XTitle align="left">Payment proofs</XTitle><div className="x-whatsapp-grid !grid-cols-2"><article><p>Payment proof</p><span>Verified source to be added</span></article><article><p>Payment proof</p><span>Verified source to be added</span></article></div></div>
-          <div className="x-panel"><XTitle align="left">Client wins & recognition</XTitle><div className="x-media-grid"><XMediaCard image="/images/stock/workshop-community.png" title="Recognition gallery" /><XMediaCard image="/images/editorial/sales-psychology.png" title="Client win" /></div></div>
+          <div className="x-panel">
+            <XTitle align="left">Payment proofs</XTitle>
+            <div className="x-payment-proof-grid">
+              <figure><Image src="/images/payment-proofs/payment-proof-75000.png" alt="₹75,000 payment confirmation" fill sizes="(max-width: 760px) 100vw, 25vw" /></figure>
+              <figure><Image src="/images/payment-proofs/payment-proof-50000.png" alt="₹50,000 payment confirmation" fill sizes="(max-width: 760px) 100vw, 25vw" /></figure>
+            </div>
+          </div>
+          <div className="x-panel"><XTitle align="left">Client wins & recognition</XTitle><div className="x-media-grid" style={{ "--x-media-cols": 2 } as CSSProperties}><XMediaCard image="/images/client-wins/MCP06530.jpg" title="Celebrating the Chanakyas" /><XMediaCard image="/images/client-wins/MUK00375.jpg" title="Recognition that inspires" /></div></div>
         </div>
       </XSection>
 

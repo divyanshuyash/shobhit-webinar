@@ -30,24 +30,24 @@ import {
   XHeroActions,
   XMediaCard,
   XMeta,
-  XSchedule,
   XSection,
   XStats,
   XSteps,
   XTitle
 } from "@/components/ExactBlocks";
 import { faqs, notFor, webinarFor } from "@/data/site";
+import { testimonialVideos } from "@/data/testimonialVideos";
 
 export default function WebinarPage() {
   return (
     <>
       <XHero
-        mode="three"
-        image="/images/founder/hero-founder.png"
+        image="/images/generated/webinar-hero-v2.png"
         eyebrow="Join the free weekend webinar"
         title={<>Digital consultant<br /><XAccent>launchpad</XAccent></>}
         copy="The Crorepati Consultant Blueprint. Build a high-ticket consulting business using your knowledge, experience & AI."
-        aside={<XSchedule />}
+        imagePosition="52% 8%"
+        className="x-hero-webinar"
       ><XHeroActions video={false} /></XHero>
 
       <XMeta items={[
@@ -136,9 +136,10 @@ export default function WebinarPage() {
       <XSection>
         <XTitle align="left">Loved by consultants & entrepreneurs</XTitle>
         <div className="x-media-grid" style={{ "--x-media-cols": 4 } as CSSProperties}>
-          {["/images/editorial/testimonial-leadership.png", "/images/editorial/testimonial-finance.png", "/images/editorial/testimonial-career.png", "/images/stock/workshop-community.png"].map((image, index) => (
-            <XMediaCard key={image} image={image} title={["Clarity that changed everything", "Practical and powerful", "The DCL framework works", "A system I can follow"][index]} copy="Illustrative preview · verified testimonial to be added" video />
-          ))}
+          <XMediaCard image="/images/editorial/testimonial-leadership.png" title="Clarity that changed everything" copy="Community testimonial" videoSrc={testimonialVideos[4].src} />
+          <XMediaCard image="/images/editorial/testimonial-finance.png" title="Practical and powerful" copy="Community testimonial" videoSrc={testimonialVideos[5].src} />
+          <XMediaCard image="/images/editorial/testimonial-career.png" title="The DCL framework works" copy="Community testimonial" videoSrc={testimonialVideos[0].src} />
+          <XMediaCard image="/images/stock/workshop-community.png" title="A system I can follow" copy="Community testimonial" videoSrc={testimonialVideos[1].src} />
         </div>
       </XSection>
 

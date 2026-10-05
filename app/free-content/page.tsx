@@ -7,10 +7,8 @@ import {
   Rocket
 } from "lucide-react";
 import { FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
-import type { CSSProperties } from "react";
 import {
   XAccent,
-  XButton,
   XCta,
   XGrid,
   XHero,
@@ -21,6 +19,15 @@ import {
   XSteps,
   XTitle
 } from "@/components/ExactBlocks";
+
+const featuredVideos = [
+  { id: "fm18ckm6lcI", title: "Episode 1: The Restart" },
+  { id: "4DZyK-74O3o", title: "Episode 2: The Rondumal Syndrome" },
+  { id: "Sm-6kxSiIq8", title: "Episode 3: The Narcissist Vortex" },
+  { id: "Y8T4BsALkXQ", title: "Day 5: Social Media Game Plan" }
+];
+
+const shortFormReels = ["Da77mg0zg6x", "DanYvhbzR1V", "DaQLgSVz0Fx", "DaiMuX4zOJ2"];
 
 export default function FreeContentPage() {
   return (
@@ -33,29 +40,47 @@ export default function FreeContentPage() {
       ><XHeroActions video={false} /></XHero>
 
       <XSection>
-        <div className="x-platform-grid"><XGrid columns={4} items={[
-          { title: "YouTube", copy: "In-depth videos on business models, strategy and AI.", icon: FaYoutube, footer: "Watch on YouTube" },
-          { title: "Instagram", copy: "Daily tips, reels and insights on growth and sales.", icon: FaInstagram, footer: "Follow on Instagram" },
-          { title: "LinkedIn", copy: "Thought leadership, case studies and professional insight.", icon: FaLinkedinIn, footer: "Follow on LinkedIn" },
-          { title: "Blogs", copy: "In-depth articles, frameworks and business guides.", icon: FileText, footer: "Read blogs" }
+        <div className="x-platform-grid"><XGrid columns={3} items={[
+          { title: "YouTube", copy: "In-depth videos on business models, strategy and AI.", icon: FaYoutube, footer: "Watch on YouTube", href: "https://www.youtube.com/@shobhitsinghal93" },
+          { title: "Instagram", copy: "Daily tips, reels and insights on growth and sales.", icon: FaInstagram, footer: "Follow on Instagram", href: "https://www.instagram.com/shobhitransformer/" },
+          { title: "LinkedIn", copy: "Thought leadership, case studies and professional insight.", icon: FaLinkedinIn, footer: "Follow on LinkedIn", href: "https://www.linkedin.com/in/shobhitsinghal93/" }
         ]} /></div>
       </XSection>
 
       <XSection>
         <XTitle align="left">Featured videos</XTitle>
-        <div className="x-media-grid" style={{ "--x-media-cols": 4 } as CSSProperties}>
-          <XMediaCard image="/images/founder/founder-webinar.png" title="Consulting business model explained" video label="12:45" />
-          <XMediaCard image="/images/editorial/ai-systems.png" title="AI tools consultants must use" video label="14:32" />
-          <XMediaCard image="/images/editorial/sales-psychology.png" title="How to get high-ticket clients" video label="11:08" />
-          <XMediaCard image="/images/editorial/offer-blueprint.png" title="Build systems, not just processes" video label="10:21" />
+        <div className="x-youtube-grid">
+          {featuredVideos.map(({ id, title }) => (
+            <article className="x-youtube-card" key={id}>
+              <div className="x-youtube-player">
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${id}`}
+                  title={title}
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+              <h3>{title}</h3>
+              <p>Watch on YouTube</p>
+            </article>
+          ))}
         </div>
       </XSection>
 
       <XSection>
         <XTitle align="left">Short-form content</XTitle>
-        <div className="x-short-grid">
-          {["One offer that sells itself", "Stop doing free consultations", "The consultant's weekly checklist", "3 ways to find premium clients", "Automate this. Save 10+ hours", "Pricing is not the problem", "Perfect your process", "How I run my consulting business"].map((title, index) => (
-            <article key={title}><img src={["/images/founder/founder-webinar.png", "/images/editorial/offer-blueprint.png", "/images/generated/home-hero.png", "/images/editorial/ai-systems.png", "/images/editorial/sales-psychology.png", "/images/generated/blogs-hero.png", "/images/generated/content-hero.png", "/images/editorial/corporate-freedom.png"][index]} alt="" /><span>{title}</span><small>▶ {8.3 + index}K</small></article>
+        <div className="x-reel-grid">
+          {shortFormReels.map((id, index) => (
+            <article className="x-reel-card" key={id}>
+              <iframe
+                src={`https://www.instagram.com/reel/${id}/embed/captioned/`}
+                title={`Instagram reel ${index + 1}`}
+                loading="lazy"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </article>
           ))}
         </div>
       </XSection>
@@ -63,12 +88,12 @@ export default function FreeContentPage() {
       <XSection>
         <XTitle align="left">Free resources</XTitle>
         <XGrid columns={6} items={[
-          { title: "Consulting business blueprint", copy: "Step-by-step guide to build your business.", icon: FileText, footer: "Download now" },
-          { title: "High-ticket offer framework", copy: "Create offers premium clients understand.", icon: FileText, footer: "Download now" },
-          { title: "Lead generation checklist", copy: "Organic strategies to attract quality leads.", icon: FileText, footer: "Download now" },
-          { title: "Discovery call script", copy: "A structured script for better calls.", icon: FileText, footer: "Download now" },
-          { title: "Business growth roadmap", copy: "A practical sequence for growth.", icon: FileText, footer: "Download now" },
-          { title: "AI toolkit for consultants", copy: "Tools and prompts to save time.", icon: Bot, footer: "Download now" }
+          { title: "Entrepreneurship", copy: "A free, peer-reviewed textbook on building and growing a business.", icon: FileText, footer: "Read free book", href: "https://openstax.org/details/books/entrepreneurship" },
+          { title: "Principles of Marketing", copy: "A complete free guide to customer value, positioning and marketing strategy.", icon: FileText, footer: "Read free book", href: "https://openstax.org/details/books/principles-marketing" },
+          { title: "Principles of Management", copy: "A free textbook on planning, leading and managing for sustainable growth.", icon: FileText, footer: "Read free book", href: "https://openstax.org/details/books/principles-management" },
+          { title: "Sales Meeting Playbook", copy: "A practical checklist for sales meetings that move conversations forward.", icon: FileText, footer: "Get free playbook", href: "https://offers.hubspot.com/sales-meeting-playbook" },
+          { title: "The Sales Closing Guide", copy: "Three deal-closing approaches to sharpen your sales conversations.", icon: FileText, footer: "Get free guide", href: "https://offers.hubspot.com/sales-closing-guide" },
+          { title: "AI for Sales", copy: "A free guide to using AI to improve prospecting and sales performance.", icon: Bot, footer: "Get free guide", href: "https://offers.hubspot.com/ai-sales" }
         ]} />
       </XSection>
 
@@ -92,7 +117,10 @@ export default function FreeContentPage() {
             { value: "25,000+", label: "LinkedIn followers", icon: FaLinkedinIn },
             { value: "10,000+", label: "Email community", icon: Mail }
           ]} />
-          <div className="x-media-grid"><XMediaCard image="/images/stock/workshop-community.png" title="Community" /><XMediaCard image="/images/editorial/sales-psychology.png" title="Live learning" /></div>
+          <div className="x-media-grid free-content-community-gallery">
+            <XMediaCard image="/images/founder/MUK07929.jpg" title="A community that celebrates together" imagePosition="center 48%" />
+            <XMediaCard image="/images/founder/MUK00449.jpg" title="Growing together, in every room" imagePosition="center 45%" />
+          </div>
         </div>
       </XSection>
 

@@ -26,7 +26,6 @@ import {
   XMediaCard,
   XSection,
   XStats,
-  XTestimonial,
   XTitle
 } from "@/components/ExactBlocks";
 
@@ -34,16 +33,17 @@ export default function AboutPage() {
   return (
     <>
       <XHero
-        image="/images/generated/about-hero.png"
+        image="/images/generated/about-hero-v2.png"
         eyebrow="The founder story"
         title={<>From survival<br /><XAccent>to strategy</XAccent></>}
         copy="The story of Shobhit Singhal and how he built The Transformers Hub to help professionals become Modern Chanakyas."
-        imagePosition="center"
+        imagePosition="54% 12%"
+        className="x-hero-about"
       ><XHeroActions video={false} /></XHero>
 
       <XSection>
         <div className="x-split-grid items-center">
-          <XMediaCard image="/images/founder/founder-desk.png" title="Shobhit Singhal" />
+          <XMediaCard image="/images/founder/MUK08384.jpg" title="Shobhit Singhal" imagePosition="center 24%" />
           <div>
             <XTitle align="left">About <XAccent>Shobhit</XAccent></XTitle>
             <p className="text-xs leading-6 text-offwhite/75">I did not start with a strategy. I started with struggle. From financial setbacks to career uncertainty, I studied people, markets and systems, learned from mistakes and built digital businesses from scratch.</p>
@@ -73,12 +73,12 @@ export default function AboutPage() {
       <XSection>
         <div className="x-split-grid">
           <article className="x-story-panel">
-            <Image src="/images/stock/workshop-community.png" alt="Shobhit speaking to a consulting workshop" fill sizes="(max-width: 760px) 100vw, 50vw" />
+            <Image src="/images/founder/MUK00449.jpg" alt="Transformers Hub community celebrating together" fill sizes="(max-width: 760px) 100vw, 50vw" style={{ objectPosition: "center 48%" }} />
             <div className="x-story-shade" />
             <div><XTitle align="left">Why I built <XAccent>The Transformers Hub</XAccent></XTitle><p>I saw talented professionals trapped in jobs they did not love. They had skills but no strategy, worked hard but did not build wealth or freedom.</p><p>The Hub exists to help experts transform their skills into high-ticket consulting businesses and become the authority in their niche.</p></div>
           </article>
           <article className="x-story-panel">
-            <Image src="/images/stock/strategy-still-life.png" alt="Gold chess king representing strategy and mission" fill sizes="(max-width: 760px) 100vw, 50vw" />
+            <Image src="/images/founder/MUK08210.jpg" alt="Shobhit Singhal celebrating with the Transformers Hub community" fill sizes="(max-width: 760px) 100vw, 50vw" style={{ objectPosition: "46% 46%" }} />
             <div className="x-story-shade" />
             <div><XTitle align="left">Mission: creating <XAccent>Crorepati Chanakyas</XAccent></XTitle><ul className="x-checks"><li><span>✓</span>Elevate professionals into world-class consultants.</li><li><span>✓</span>Build businesses with impact, freedom and legacy.</li><li><span>✓</span>Create a new India of thinkers, strategists and problem solvers.</li></ul></div>
           </article>
@@ -111,15 +111,16 @@ export default function AboutPage() {
       <XSection>
         <XTitle>A glimpse of <XAccent>the journey</XAccent></XTitle>
         <div className="x-media-grid" style={{ "--x-media-cols": 5 } as CSSProperties}>
-          {["/images/founder/founder-webinar.png", "/images/stock/workshop-community.png", "/images/editorial/sales-psychology.png", "/images/founder/founder-desk.png", "/images/editorial/offer-blueprint.png"].map((image, index) => (
-            <XMediaCard key={image} image={image} title={["Live teaching", "Community", "Strategy session", "Founder writings", "Consulting room"][index]} />
+          {[
+            { image: "/images/founder/MUK08438.jpg", title: "Live teaching", imagePosition: "center 36%" },
+            { image: "/images/founder/MUK09044.jpg", title: "Community learning", imagePosition: "center 46%" },
+            { image: "/images/founder/MUK08772.jpg", title: "Strategy session", imagePosition: "center 28%" },
+            { image: "/images/founder/MUK00277.jpg", title: "Shared learning", imagePosition: "center 48%" },
+            { image: "/images/founder/MUK07929.jpg", title: "Community celebration", imagePosition: "center 46%" }
+          ].map(({ image, title, imagePosition }) => (
+            <XMediaCard key={image} image={image} title={title} imagePosition={imagePosition} />
           ))}
         </div>
-      </XSection>
-
-      <XSection>
-        <XTitle>What <XAccent>people say</XAccent></XTitle>
-        <div className="x-testimonial-grid"><XTestimonial image="/images/editorial/testimonial-leadership.png" /><XTestimonial image="/images/editorial/testimonial-finance.png" /><XTestimonial image="/images/editorial/testimonial-career.png" /></div>
       </XSection>
 
       <XSection><XCta /></XSection>

@@ -16,7 +16,6 @@ import {
   Landmark,
   Magnet,
   Megaphone,
-  Newspaper,
   PackageCheck,
   Presentation,
   ScanSearch,
@@ -35,7 +34,6 @@ import {
   XFaq,
   XGrid,
   XSection,
-  XTestimonial,
   XTitle,
   XWrap
 } from "@/components/ExactBlocks";
@@ -51,12 +49,12 @@ const problems = [
 ];
 
 const occupations = [
-  { title: "Corporate professionals", copy: "Turn years of experience into a focused advisory business.", image: "/images/editorial/testimonial-finance.png", icon: Building2 },
-  { title: "Sales leaders", copy: "Convert commercial instinct into a premium consulting method.", image: "/images/editorial/occupation-sales.png", icon: ChartNoAxesCombined },
-  { title: "Teachers & trainers", copy: "Package your teaching ability into a clear transformation.", image: "/images/editorial/testimonial-leadership.png", icon: Presentation },
-  { title: "Finance experts", copy: "Build an authority-led offer around your analytical expertise.", image: "/images/editorial/occupation-finance.png", icon: Landmark },
-  { title: "Marketing professionals", copy: "Move from execution work to high-value strategic guidance.", image: "/images/editorial/testimonial-career.png", icon: Megaphone },
-  { title: "Experienced professionals", copy: "Use your lived insight to create impact, income and freedom.", image: "/images/founder/founder-desk.png", icon: BriefcaseBusiness }
+  { title: "Corporate professionals", copy: "Turn years of experience into a focused advisory business.", image: "/images/modern-chanakya/MUK08418.jpg", imagePosition: "62% center", icon: Building2 },
+  { title: "Sales leaders", copy: "Convert commercial instinct into a premium consulting method.", image: "/images/modern-chanakya/MUK08781.jpg", imagePosition: "52% center", icon: ChartNoAxesCombined },
+  { title: "Teachers & trainers", copy: "Package your teaching ability into a clear transformation.", image: "/images/modern-chanakya/MUK09238.jpg", imagePosition: "68% center", icon: Presentation },
+  { title: "Finance experts", copy: "Build an authority-led offer around your analytical expertise.", image: "/images/modern-chanakya/MUK09379.jpg", imagePosition: "52% center", icon: Landmark },
+  { title: "Marketing professionals", copy: "Move from execution work to high-value strategic guidance.", image: "/images/modern-chanakya/MUK09813.jpg", imagePosition: "38% center", icon: Megaphone },
+  { title: "Experienced professionals", copy: "Use your lived insight to create impact, income and freedom.", image: "/images/modern-chanakya/MUK09927.jpg", imagePosition: "48% center", icon: BriefcaseBusiness }
 ];
 
 const consultingEquation = [
@@ -90,13 +88,13 @@ const metrics = [
   { value: "10+", label: "Years of experience", icon: Clock3 }
 ];
 
-const reviewLayouts = [
-  "The framework gave me a clearer way to think about my niche and premium offer.",
-  "I finally understood how my existing experience could become a consulting business.",
-  "The sequence from clarity to leads made the whole journey feel practical.",
-  "The biggest shift was moving from scattered ideas to one focused transformation.",
-  "The session connected positioning, sales and delivery in a way I could act on.",
-  "I left with a roadmap instead of another folder full of disconnected tactics."
+const reviews = [
+  { quote: "Happy to share that my second high-ticket client of ₹50,000 got confirmed today. I just received the token amount. Shobhit’s suggestion about speaking to the client’s husband worked for me.", name: "Dr. Archanaa Dongre" },
+  { quote: "Happy and thrilled to share that I have signed a client for ₹6.5 lakh, which includes personal coaching, business consulting, and team training. I received ₹50,000 today, and the remaining amount will come from July. I am grateful for all the learnings and a special thanks to Shobhit Singhal for being available for guidance. He sat with me at 11 PM to finalize my proposal and give valuable inputs.", name: "Umesh Sharda" },
+  { quote: "Small win, big mindset shift. I just closed a ₹40K client deal. The client was already warm, but the real win was something else. Earlier, I used to pitch around ₹15K and often added extra services for free because I felt uncomfortable charging separately. With Shobhit’s guidance, I confidently quoted an additional ₹25K for a five-month service instead of giving it away for free. This may sound like a small win, but for me, it is a big mindset shift. Learning to charge for the value I create has given me a new level of confidence.", name: "Shivangani Gupta" },
+  { quote: "New perspectives and lots of learning. My takeaway was that content should appeal to the customer through relevance, identity, usefulness, emotion, novelty, and connection. Overall, it was an awesome session.", name: "Rajesh S" },
+  { quote: "Great session. The biggest takeaway is that action needs to be taken.", name: "Agnes D’Costa" },
+  { quote: "What a loss that the session was not recorded. It would have been great to go back to it as a reference.", name: "Udita Shah" }
 ];
 
 const dclSteps = [
@@ -193,9 +191,9 @@ export default function HomePage() {
       <XSection className="is-alt">
         <XTitle>Who is a <XAccent>modern Chanakya?</XAccent></XTitle>
         <div className="home-occupation-grid">
-          {occupations.map(({ title, copy, image, icon: Icon }) => (
+          {occupations.map(({ title, copy, image, imagePosition, icon: Icon }) => (
             <article key={title}>
-              <div className="home-occupation-image"><Image src={image} alt={`Illustrative ${title.toLowerCase()} portrait`} fill sizes="(max-width: 760px) 72vw, 17vw" /></div>
+              <div className="home-occupation-image"><Image src={image} alt={`${title} at a Modern Chanakya event`} fill sizes="(max-width: 760px) 72vw, 17vw" style={{ objectPosition: imagePosition }} /></div>
               <div><span><Icon size={16} /> Modern Chanakya path</span><h3>{title}</h3><p>{copy}</p></div>
             </article>
           ))}
@@ -232,7 +230,7 @@ export default function HomePage() {
       <XSection>
         <div className="home-proof-grid">
           <article className="home-proof-story">
-            <Image src="/images/generated/about-hero.png" alt="Shobhit Singhal seated in a strategy library" fill sizes="(max-width: 760px) 100vw, 34vw" />
+            <Image src="/images/founder/MUK08971.jpg" alt="Shobhit Singhal speaking at a Modern Chanakya event" fill sizes="(max-width: 760px) 100vw, 34vw" style={{ objectPosition: "54% 32%" }} />
             <div />
             <span><small>Founder journey</small><b>From survival to strategy</b><p>A consulting philosophy shaped through experience, experimentation and systems.</p></span>
           </article>
@@ -244,10 +242,14 @@ export default function HomePage() {
 
       <XSection className="is-alt">
         <div className="home-community-layout">
-          <div className="home-community-intro"><p>Community proof</p><h2>What our <XAccent>community says</XAccent></h2><span>Six balanced story cards fill the section now. Replace the sample layout copy with verified client words before publishing.</span></div>
+          <div className="home-community-intro"><p>Community proof</p><h2>What our <XAccent>community says</XAccent></h2><span>Real outcomes and reflections from the Transformers Hub community.</span></div>
           <div className="home-review-wall">
-            {reviewLayouts.map((quote, index) => (
-              <XTestimonial key={quote} quote={quote} role="Sample layout · verified review required" image={["/images/editorial/testimonial-leadership.png", "/images/editorial/testimonial-finance.png", "/images/editorial/testimonial-career.png"][index % 3]} />
+            {reviews.map(({ quote, name }) => (
+              <article className="home-review-card" key={name}>
+                <span aria-hidden="true">“</span>
+                <blockquote>{quote}</blockquote>
+                <footer><strong>{name}</strong><small>Transformers Hub Community</small></footer>
+              </article>
             ))}
           </div>
         </div>
@@ -276,11 +278,10 @@ export default function HomePage() {
 
       <XSection>
         <XTitle align="left">Learn. Apply. <XAccent>Grow. Repeat.</XAccent></XTitle>
-        <div className="x-platform-grid"><XGrid columns={4} items={[
-          { title: "YouTube", copy: "In-depth strategy and consulting videos.", icon: FaYoutube },
-          { title: "Instagram", copy: "Daily ideas, reels and behind the scenes.", icon: FaInstagram },
-          { title: "LinkedIn", copy: "Professional insights and thought leadership.", icon: FaLinkedinIn },
-          { title: "Blogs", copy: "Detailed articles and practical frameworks.", icon: Newspaper }
+        <div className="x-platform-grid"><XGrid columns={3} items={[
+          { title: "YouTube", copy: "In-depth strategy and consulting videos.", icon: FaYoutube, href: "https://www.youtube.com/@shobhitsinghal93" },
+          { title: "Instagram", copy: "Daily ideas, reels and behind the scenes.", icon: FaInstagram, href: "https://www.instagram.com/shobhitransformer/" },
+          { title: "LinkedIn", copy: "Professional insights and thought leadership.", icon: FaLinkedinIn, href: "https://www.linkedin.com/in/shobhitsinghal93/" }
         ]} /></div>
       </XSection>
 
@@ -291,13 +292,6 @@ export default function HomePage() {
         <XFaq items={faqs.slice(0, 6)} />
       </XSection>
 
-      <XSection className="home-final-section">
-        <article className="home-final-cta">
-          <div className="home-final-person"><Image src="/images/founder/hero-founder.png" alt="Shobhit Singhal" fill sizes="220px" /></div>
-          <div><p>Ready when you are</p><h2>Stop overthinking. <XAccent>Start building.</XAccent></h2><span>Join professionals who are turning hard-earned experience into focused, high-value consulting businesses.</span></div>
-          <XButton>Join the free webinar now</XButton>
-        </article>
-      </XSection>
     </>
   );
 }

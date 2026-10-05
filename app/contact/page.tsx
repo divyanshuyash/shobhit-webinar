@@ -10,7 +10,6 @@ import {
   Headphones,
   BriefcaseBusiness,
   Mail,
-  MapPin,
   MessageSquareText,
   Mic2,
   UsersRound,
@@ -27,39 +26,46 @@ import {
   XStats,
   XTitle
 } from "@/components/ExactBlocks";
+import { ContactMessageForm } from "@/components/ContactMessageForm";
 import { brand } from "@/data/constants";
+
+const contactEmail = "sshobhit93@gmail.com";
 
 const helpOptions = [
   {
     title: "Webinar Support",
     copy: "Registration, access, replay, or attendance support for the live weekend session.",
     icon: Headphones,
-    footer: "Get support"
+    footer: "Get support",
+    href: `mailto:${contactEmail}?subject=${encodeURIComponent("Webinar Support")}`
   },
   {
     title: "Partnerships & Business Inquiries",
     copy: "Collaborations, affiliates, corporate learning, and strategic partnership conversations.",
     icon: Handshake,
-    footer: "Partner with us"
+    footer: "Partner with us",
+    href: `mailto:${contactEmail}?subject=${encodeURIComponent("Partnerships & Business Inquiries")}`
   },
   {
     title: "Speaking Invitations",
     copy: "Invite Shobhit for a keynote, workshop, panel, or leadership session.",
     icon: Mic2,
-    footer: "Send invitation"
+    footer: "Send invitation",
+    href: `mailto:${contactEmail}?subject=${encodeURIComponent("Speaking Invitation")}`
   },
   {
     title: "General Contact",
     copy: "Have a question or want to say hello? Send a direct note to the team.",
     icon: Mail,
-    footer: "Drop a message"
+    footer: "Drop a message",
+    href: `mailto:${contactEmail}?subject=${encodeURIComponent("General Contact")}`
   }
 ];
 
 const socialChannels = [
-  { title: "YouTube", copy: "Webinars, consulting insights, and long-form strategy sessions.", icon: Clapperboard, footer: "Watch now" },
-  { title: "Instagram", copy: "Short ideas, practical prompts, and behind-the-scenes updates.", icon: Camera, footer: "Follow" },
-  { title: "LinkedIn", copy: "Professional insights, articles, and business conversations.", icon: BriefcaseBusiness, footer: "Connect" },
+  { title: "YouTube", copy: "Webinars, consulting insights, and long-form strategy sessions.", icon: Clapperboard, footer: "Watch now", href: "https://www.youtube.com/@shobhitsinghal93" },
+  { title: "Instagram", copy: "Short ideas, practical prompts, and behind-the-scenes updates.", icon: Camera, footer: "Follow", href: "https://www.instagram.com/shobhitransformer/" },
+  { title: "LinkedIn", copy: "Professional insights, articles, and business conversations.", icon: BriefcaseBusiness, footer: "Connect", href: "https://www.linkedin.com/in/shobhitsinghal93/" },
   { title: "Email Us", copy: brand.email, icon: Mail, footer: "Send email" }
 ];
 
@@ -108,48 +114,13 @@ export default function ContactPage() {
         <div className="x-contact-main">
           <article className="x-panel">
             <XTitle align="left">Send Us <XAccent>A Message</XAccent></XTitle>
-            <form className="x-form-grid">
-              <label>
-                Full Name*
-                <input className="x-input" name="name" placeholder="Your full name" />
-              </label>
-              <label>
-                Email Address*
-                <input className="x-input" name="email" type="email" placeholder="you@example.com" />
-              </label>
-              <label>
-                Phone / WhatsApp
-                <input className="x-input" name="phone" placeholder="Contact number" />
-              </label>
-              <label>
-                Inquiry Type*
-                <select className="x-input" name="type" defaultValue="">
-                  <option value="" disabled>Select an option</option>
-                  <option>Webinar Support</option>
-                  <option>Partnerships & Business Inquiries</option>
-                  <option>Speaking Invitations</option>
-                  <option>General Contact</option>
-                </select>
-              </label>
-              <label className="is-wide">
-                How can we help you?*
-                <textarea className="x-input" name="message" placeholder="Tell us a little about your inquiry" />
-              </label>
-              <label className="is-wide x-consent">
-                <input type="checkbox" name="consent" />
-                <span>I agree to receive relevant information from Shobhit Singhal.</span>
-              </label>
-              <div className="is-wide x-form-action">
-                <button className="x-button" type="submit">Send message <MessageSquareText size={14} /></button>
-                <small><Clock3 size={13} /> We typically respond within 24 business hours.</small>
-              </div>
-            </form>
+            <ContactMessageForm />
           </article>
 
           <article className="x-contact-webinar">
             <Image
-              src="/images/stock/strategy-still-life.png"
-              alt="Consulting webinar workspace"
+              src="/images/contact/MUK07494.jpg"
+              alt="Chanakya Conclave delegate passes ready for the event"
               fill
               sizes="(max-width: 760px) 100vw, 48vw"
             />
@@ -194,14 +165,7 @@ export default function ContactPage() {
             />
           </article>
           <article className="x-contact-location">
-            <Image src="/images/stock/workshop-community.png" alt="Consulting community workshop" fill sizes="(max-width: 760px) 100vw, 58vw" />
-            <div className="x-contact-location-shade" />
-            <div>
-              <MapPin size={25} />
-              <b>Headquarters</b>
-              <span>{brand.location}</span>
-              <small>Serving professionals worldwide.</small>
-            </div>
+            <Image src="/images/founder/MUK08438.jpg" alt="Shobhit Singhal speaking at Chanakya Conclave" fill sizes="(max-width: 760px) 100vw, 58vw" />
           </article>
         </div>
       </XSection>

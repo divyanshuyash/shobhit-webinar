@@ -10,9 +10,9 @@ export function SiteFooter() {
     <footer className="x-site-footer">
       <div className="x-site-footer-grid">
         <div>
-          <div className="x-site-brand"><span><BrandMark /></span><div><strong>{brand.name}</strong><small>{brand.hub}</small></div></div>
+          <div className="x-site-brand"><span><BrandMark /></span></div>
           <p>Helping professionals transform their experience into focused, premium consulting businesses.</p>
-          <div className="x-site-social"><span><FaYoutube /></span><span><FaInstagram /></span><span><FaLinkedin /></span></div>
+          <div className="x-site-social"><a href="https://www.youtube.com/@shobhitsinghal93" target="_blank" rel="noreferrer" aria-label="YouTube"><FaYoutube /></a><a href="https://www.instagram.com/shobhitransformer/" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram /></a><a href="https://www.linkedin.com/in/shobhitsinghal93/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedin /></a></div>
         </div>
         <div>
           <h3>Quick Links</h3>

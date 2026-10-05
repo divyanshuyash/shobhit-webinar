@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { WEBINAR_URL } from "@/data/constants";
 import { Reveal, Stagger, StaggerCard, StaggerCell } from "./ExactMotion";
+import { VideoPreview } from "./VideoPreview";
 
 export type ExactIcon = ComponentType<{
   size?: number | string;
@@ -25,6 +26,7 @@ export type ExactItem = {
   icon: ExactIcon;
   eyebrow?: string;
   footer?: string;
+  href?: string;
 };
 
 export function XWrap({ children, className = "" }: { children: ReactNode; className?: string }) {
@@ -76,7 +78,8 @@ export function XHero({
   mode = "split",
   aside,
   children,
-  imagePosition = "center"
+  imagePosition = "center",
+  className = ""
 }: {
   eyebrow: string;
   title: ReactNode;
@@ -86,9 +89,10 @@ export function XHero({
   aside?: ReactNode;
   children?: ReactNode;
   imagePosition?: string;
+  className?: string;
 }) {
   return (
-    <section className={`x-hero x-hero-${mode}`}>
+    <section className={`x-hero x-hero-${mode} ${className}`}>
       {mode !== "three" ? (
         <Image src={image} alt="" fill preload sizes="100vw" className="x-hero-bg" style={{ objectPosition: imagePosition }} />
       ) : null}
@@ -141,8 +145,9 @@ export function XSection({ children, className = "" }: { children: ReactNode; cl
 export function XGrid({ items, columns = 5, numbered = false }: { items: ExactItem[]; columns?: number; numbered?: boolean }) {
   return (
     <Stagger className="x-grid" style={{ "--x-cols": columns } as CSSProperties}>
-      {items.map(({ title, copy, icon: Icon, eyebrow, footer }, index) => (
+      {items.map(({ title, copy, icon: Icon, eyebrow, footer, href }, index) => (
         <StaggerCard key={`${title}-${index}`} className="x-card">
+          {href ? <Link href={href} className="x-card-link" target="_blank" rel="noreferrer" aria-label={`Open ${title}`} /> : null}
           {numbered ? <span className="x-card-number">{String(index + 1).padStart(2, "0")}</span> : null}
           <span className="x-card-icon"><Icon size={31} strokeWidth={1.55} /></span>
           {eyebrow ? <small>{eyebrow}</small> : null}
@@ -188,12 +193,14 @@ export function XSteps({ items, compact = false }: { items: ExactItem[]; compact
   );
 }
 
-export function XMediaCard({ image, title, copy, video = false, label }: { image: string; title: string; copy?: string; video?: boolean; label?: string }) {
+export function XMediaCard({ image, title, copy, video = false, label, imagePosition = "center", videoSrc }: { image: string; title: string; copy?: string; video?: boolean; label?: string; imagePosition?: string; videoSrc?: string }) {
   return (
     <article className="x-media-card">
-      <div className="x-media-image">
-        <Image src={image} alt={title} fill sizes="(max-width: 800px) 100vw, 33vw" />
-        {video ? <span className="x-play"><Play size={20} fill="currentColor" /></span> : null}
+      <div className={`x-media-image ${videoSrc ? "is-video-source" : ""}`}>
+        {videoSrc ? (
+          <VideoPreview src={videoSrc} title={title} />
+        ) : <Image src={image} alt={title} fill sizes="(max-width: 800px) 100vw, 33vw" style={{ objectPosition: imagePosition }} />}
+        {video && !videoSrc ? <span className="x-play"><Play size={20} fill="currentColor" /></span> : null}
         {label ? <small>{label}</small> : null}
       </div>
       <h3>{title}</h3>
