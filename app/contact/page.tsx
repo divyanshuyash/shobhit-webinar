@@ -29,7 +29,7 @@ import {
 import { ContactMessageForm } from "@/components/ContactMessageForm";
 import { brand } from "@/data/constants";
 
-const contactEmail = "sshobhit93@gmail.com";
+const contactEmail = brand.email;
 
 const helpOptions = [
   {
@@ -72,7 +72,7 @@ const socialChannels = [
 const contactFaqs = [
   {
     q: "How can I join the free webinar?",
-    a: "Use any Join Free Webinar button. The registration destination is ready to be connected when the final link is supplied."
+    a: "Use any Join Free Webinar button to reserve your free seat for the live weekend session."
   },
   {
     q: "Can I invite Shobhit Singhal for an event?",
@@ -103,6 +103,7 @@ export default function ContactPage() {
           <span><MessageSquareText size={15} /> Real conversations</span>
           <span><CheckCircle2 size={15} /> Committed to your growth</span>
         </div>
+        <div className="x-actions"><XButton href="#contact-form">Send us a message</XButton></div>
       </XHero>
 
       <XSection>
@@ -112,7 +113,7 @@ export default function ContactPage() {
 
       <XSection className="is-alt">
         <div className="x-contact-main">
-          <article className="x-panel">
+          <article id="contact-form" className="x-panel">
             <XTitle align="left">Send Us <XAccent>A Message</XAccent></XTitle>
             <ContactMessageForm />
           </article>

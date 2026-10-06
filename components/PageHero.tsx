@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { ReactNode } from "react";
 import { GoldButton, OutlineButton } from "./Buttons";
 import { Container } from "./Container";
@@ -58,9 +59,12 @@ export function PageHero({
 
   return (
     <section className="ref-hero relative isolate min-h-[430px] overflow-hidden border-b border-gold/15 py-12 md:py-16">
-      <img
+      <Image
         src={image.url}
         alt={image.alt}
+        width={1200}
+        height={900}
+        sizes="(min-width: 1024px) 62vw, 100vw"
         className={imageClass}
       />
       <div className="absolute inset-0 z-0 bg-[linear-gradient(90deg,#030303_0%,rgba(3,3,3,0.96)_32%,rgba(3,3,3,0.42)_62%,rgba(3,3,3,0.68)_100%)]" />

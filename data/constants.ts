@@ -5,7 +5,6 @@ export const brand = {
   hub: "The Transformers Hub",
   monogram: "SS",
   email: "sshobhit93@gmail.com",
-  phone: "Contact number to be added",
   oneLiner:
     "Helping professionals, experts, coaches, and consultants become Modern Chanakyas by building high-ticket consulting businesses using knowledge, strategy, and AI.",
   disclaimer:

@@ -138,7 +138,7 @@ export default function HomePage() {
       <section className="home-hero">
         <picture className="home-hero-picture">
           <source media="(max-width: 760px)" srcSet={mobileHeroSrcSet} sizes="100vw" />
-          <img {...desktopHeroProps} srcSet={desktopHeroSrcSet} className="home-hero-image" />
+          <img {...desktopHeroProps} alt={heroAlt} srcSet={desktopHeroSrcSet} className="home-hero-image" />
         </picture>
         <div className="home-hero-shade" />
         <XWrap className="home-hero-content">

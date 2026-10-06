@@ -2,8 +2,7 @@
 
 import { FormEvent } from "react";
 import { Clock3, MessageSquareText } from "lucide-react";
-
-const contactEmail = "sshobhit93@gmail.com";
+import { brand } from "@/data/constants";
 
 export function ContactMessageForm() {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -26,7 +25,7 @@ export function ContactMessageForm() {
       message
     ].join("\n");
 
-    window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:${brand.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
   return (

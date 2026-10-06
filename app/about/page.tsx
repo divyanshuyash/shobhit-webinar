@@ -44,7 +44,7 @@ export default function AboutPage() {
       <XSection>
         <div className="x-split-grid items-center">
           <figure className="about-shobhit-photo">
-            <img src="/images/founder/about-shobhit.jpg" alt="Shobhit Singhal speaking at a Transformers Hub event" width={1200} height={932} loading="eager" decoding="async" />
+            <Image src="/images/founder/about-shobhit.jpg" alt="Shobhit Singhal speaking at a Transformers Hub event" width={1200} height={932} priority />
           </figure>
           <div>
             <XTitle align="left">About <XAccent>Shobhit</XAccent></XTitle>

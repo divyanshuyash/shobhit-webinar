@@ -70,11 +70,11 @@ export default function TestimonialsPage() {
       <XSection>
         <XTitle>Success stories by <XAccent>category</XAccent></XTitle>
         <XGrid columns={5} items={[
-          { title: "Niche clarity results", copy: "Found their profitable consulting niche.", icon: Crosshair, footer: "Verified result to be added" },
-          { title: "High-ticket offer results", copy: "Created and launched premium offers.", icon: BadgeDollarSign, footer: "Verified result to be added" },
-          { title: "Sales results", copy: "Built consistent sales conversations.", icon: ChartNoAxesCombined, footer: "Verified result to be added" },
-          { title: "Confidence results", copy: "Moved past doubt and indecision.", icon: BrainCircuit, footer: "Verified result to be added" },
-          { title: "Community results", copy: "Built collaboration and support.", icon: UsersRound, footer: "Verified result to be added" }
+          { title: "Niche clarity results", copy: "Found their profitable consulting niche.", icon: Crosshair },
+          { title: "High-ticket offer results", copy: "Created and launched premium offers.", icon: BadgeDollarSign },
+          { title: "Sales results", copy: "Built consistent sales conversations.", icon: ChartNoAxesCombined },
+          { title: "Confidence results", copy: "Moved past doubt and indecision.", icon: BrainCircuit },
+          { title: "Community results", copy: "Built collaboration and support.", icon: UsersRound }
         ]} />
       </XSection>
 

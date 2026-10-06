@@ -15,8 +15,6 @@ import {
   Presentation,
   ScanSearch,
   Sparkles,
-  Target,
-  TrendingUp,
   UsersRound,
   Video
 } from "lucide-react";
@@ -87,7 +85,7 @@ export default function WebinarPage() {
         <XGrid columns={5} items={[
           { title: "Proven framework", copy: "Not theory.", icon: BrainCircuit },
           { title: "100% practical", copy: "Actionable strategies you can apply.", icon: Presentation },
-          { title: "Real case studies", copy: "Verified client stories can be added.", icon: BadgeCheck },
+          { title: "Outcome-focused strategy", copy: "Build a repeatable path to meaningful client outcomes.", icon: BadgeCheck },
           { title: "Live Q&A", copy: "Get your questions answered live.", icon: MessageCircleMore },
           { title: "AI-powered edge", copy: "Use AI to save time and scale faster.", icon: Bot }
         ]} />

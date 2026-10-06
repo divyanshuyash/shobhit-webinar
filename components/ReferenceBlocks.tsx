@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { GoldButton, OutlineButton } from "./Buttons";
+import Image from "next/image";
 import { ImagePlaceholder } from "./ImagePlaceholder";
 
 type CardItem = {
@@ -248,7 +249,14 @@ export function MiniTestimonials({ items, startIndex = 0 }: { items: string[], s
             <p className="font-display text-5xl leading-none text-gold">“</p>
             <p className="text-[13px] font-semibold leading-6 text-offwhite flex-1">{item}</p>
             <div className="mt-5 flex items-center gap-3">
-              <img src={`https://images.unsplash.com/photo-${["1560250097-0b93528c311a","1573496359142-b8d87734a5a2","1519085360753-af0119f7cbe7"][actualIndex % 3]}?q=80&w=100&auto=format&fit=crop`} alt="Avatar" className="size-10 rounded-full object-cover shrink-0 border border-gold/30" />
+              <Image
+                src={`https://images.unsplash.com/photo-${["1560250097-0b93528c311a","1573496359142-b8d87734a5a2","1519085360753-af0119f7cbe7"][actualIndex % 3]}?q=80&w=100&auto=format&fit=crop`}
+                alt="Avatar"
+                width={40}
+                height={40}
+                unoptimized
+                className="size-10 shrink-0 rounded-full border border-gold/30 object-cover"
+              />
               <div>
                 <p className="text-sm font-black text-offwhite">{["Rahul Mehta", "Priya Sharma", "Ankit Agarwal"][actualIndex % 3]}</p>
                 <p className="text-xs text-muted">{["Business Coach", "Marketing Consultant", "Finance Advisor"][actualIndex % 3]}</p>

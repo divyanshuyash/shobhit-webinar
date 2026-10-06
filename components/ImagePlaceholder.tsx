@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getStockImage } from "@/data/stockImages";
 
 export function ImagePlaceholder({
@@ -30,10 +31,11 @@ export function ImagePlaceholder({
       data-asset={assetPath}
       className={`group relative isolate flex min-h-64 overflow-hidden ${bare ? "" : "rounded-sm border border-gold/20 bg-black shadow-panel"} ${className}`}
     >
-      <img
+      <Image
         src={image.url}
         alt={image.alt}
-        loading="lazy"
+        fill
+        sizes="(max-width: 760px) 100vw, 50vw"
         className={`stock-kenburns absolute inset-0 h-full w-full object-cover ${objectPosition} opacity-95 saturate-[0.82] sepia-[0.12] contrast-[1.08] transition duration-700 group-hover:scale-105 group-hover:opacity-100`}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/22 to-black/10" />

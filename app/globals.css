@@ -3992,7 +3992,7 @@ body {
 
 .x-hero {
   position: relative;
-  min-height: 560px;
+  min-height: 640px;
   overflow: hidden;
   border-bottom: 1px solid rgba(243, 243, 243, 0.16);
   background:
@@ -4029,13 +4029,26 @@ body {
     linear-gradient(90deg, rgba(0, 0, 0, 0.95), transparent 60%, rgba(0, 0, 0, 0.6));
 }
 
+/* Keep all standard inner-page heroes visually consistent. The home and
+   framework heroes intentionally use their own compositions. */
+.x-hero:not(.x-hero-three) .x-hero-overlay {
+  background:
+    radial-gradient(circle at 50% 46%, rgba(0, 0, 0, 0.18), transparent 38rem),
+    linear-gradient(90deg, rgba(2, 2, 2, 0.88), rgba(2, 2, 2, 0.68) 50%, rgba(2, 2, 2, 0.88));
+}
+
 .x-hero-grid {
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   align-items: center;
-  min-height: 560px;
+  min-height: 640px;
   padding-block: 112px 58px;
+}
+
+.x-hero:not(.x-hero-three) .x-hero-grid {
+  justify-items: start;
+  text-align: left;
 }
 
 .x-hero-three .x-hero-grid {
@@ -4045,6 +4058,10 @@ body {
 
 .x-hero-copy {
   max-width: 690px;
+}
+
+.x-hero:not(.x-hero-three) .x-hero-copy {
+  max-width: 760px;
 }
 
 .x-hero-copy > p {
@@ -4078,6 +4095,10 @@ body {
   line-height: 1.45;
 }
 
+.x-hero:not(.x-hero-three) .x-hero-copy > span {
+  margin-inline: 0;
+}
+
 .x-hero-founder {
   position: relative;
   align-self: stretch;
@@ -4107,6 +4128,10 @@ body {
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 18px;
+}
+
+.x-hero:not(.x-hero-three) .x-actions {
+  justify-content: flex-start;
 }
 
 .x-schedule {
@@ -4932,7 +4957,7 @@ body {
 
   .x-hero,
   .x-hero-grid {
-    min-height: 720px;
+    min-height: 760px;
   }
 
   .x-hero-bg {
@@ -5625,7 +5650,7 @@ body {
 
 .x-framework-hero {
   position: relative;
-  min-height: 500px;
+  min-height: 620px;
   overflow: hidden;
   border-bottom: 1px solid rgba(217, 165, 32, 0.2);
   background: #060606;
@@ -5834,7 +5859,7 @@ body {
 
 .x-framework-hero .x-wrap {
   display: flex;
-  min-height: 500px;
+  min-height: 620px;
   flex-direction: column;
   justify-content: center;
   padding-block: 112px 54px;
@@ -5860,7 +5885,7 @@ body {
 @media (max-width: 760px) {
   .x-framework-hero,
   .x-framework-hero .x-wrap {
-    min-height: 680px;
+    min-height: 740px;
   }
 
   .x-framework-hero .x-steps {
