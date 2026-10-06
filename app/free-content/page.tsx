@@ -33,7 +33,8 @@ export default function FreeContentPage() {
   return (
     <>
       <XHero
-        image="/images/generated/content-hero.png"
+        image="/images/generated/content-hero-v3.png"
+        imagePosition="76% 10%"
         eyebrow="Learn. Apply. Grow."
         title={<>Learn from my<br /><XAccent>free content</XAccent></>}
         copy="Actionable strategies on consulting, AI, sales, organic leads and business growth."

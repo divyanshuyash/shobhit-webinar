@@ -43,7 +43,9 @@ export default function AboutPage() {
 
       <XSection>
         <div className="x-split-grid items-center">
-          <XMediaCard image="/images/founder/MUK08384.jpg" title="Shobhit Singhal" imagePosition="center 24%" />
+          <figure className="about-shobhit-photo">
+            <img src="/images/founder/about-shobhit.jpg" alt="Shobhit Singhal speaking at a Transformers Hub event" width={1200} height={932} loading="eager" decoding="async" />
+          </figure>
           <div>
             <XTitle align="left">About <XAccent>Shobhit</XAccent></XTitle>
             <p className="text-xs leading-6 text-offwhite/75">I did not start with a strategy. I started with struggle. From financial setbacks to career uncertainty, I studied people, markets and systems, learned from mistakes and built digital businesses from scratch.</p>

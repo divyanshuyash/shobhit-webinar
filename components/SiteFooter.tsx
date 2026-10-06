@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, MapPin } from "lucide-react";
+import { Mail } from "lucide-react";
 import { FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { brand } from "@/data/constants";
 import { legalLinks, navigation } from "@/data/navigation";
@@ -25,7 +25,7 @@ export function SiteFooter() {
         <div>
           <h3>Legal & Contact</h3>
           <div className="x-site-links">{legalLinks.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}</div>
-          <div className="x-site-contact"><span><Mail size={13} /> {brand.email}</span><span><MapPin size={13} /> {brand.location}</span></div>
+          <div className="x-site-contact"><span><Mail size={13} /> {brand.email}</span></div>
         </div>
       </div>
       <div className="x-site-footer-bottom"><span>© 2026 Shobhit Singhal. All rights reserved.</span><span>Build impact. Create freedom. Live your legacy.</span></div>

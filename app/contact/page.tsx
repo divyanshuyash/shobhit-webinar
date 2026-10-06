@@ -95,8 +95,8 @@ export default function ContactPage() {
         eyebrow="Get in touch"
         title={<>Let&apos;s Build Your <XAccent>Modern Chanakya</XAccent> Journey</>}
         copy="Whether you are a professional, an expert, or an aspiring consultant, we are here to help you build, scale, and lead with clarity."
-        image="/images/generated/contact-hero.png"
-        imagePosition="center 20%"
+        image="/images/generated/contact-hero-v2.png"
+        imagePosition="76% 10%"
       >
         <div className="x-contact-promises">
           <span><Clock3 size={15} /> Quick, personal response</span>

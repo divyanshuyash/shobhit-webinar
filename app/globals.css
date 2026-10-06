@@ -3992,7 +3992,7 @@ body {
 
 .x-hero {
   position: relative;
-  min-height: 430px;
+  min-height: 560px;
   overflow: hidden;
   border-bottom: 1px solid rgba(243, 243, 243, 0.16);
   background:
@@ -4034,8 +4034,8 @@ body {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   align-items: center;
-  min-height: 430px;
-  padding-block: 34px;
+  min-height: 560px;
+  padding-block: 112px 58px;
 }
 
 .x-hero-three .x-hero-grid {
@@ -4932,11 +4932,11 @@ body {
 
   .x-hero,
   .x-hero-grid {
-    min-height: 650px;
+    min-height: 720px;
   }
 
   .x-hero-bg {
-    object-position: 68% top !important;
+    object-position: 76% top !important;
   }
 
   .x-hero-overlay,
@@ -4949,7 +4949,35 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding-block: 28px;
+    padding-block: 116px 34px;
+  }
+
+  .x-hero-copy {
+    width: 100%;
+    max-width: 34rem;
+  }
+
+  .x-hero-copy h1 {
+    font-size: clamp(2.9rem, 12vw, 4.2rem);
+    line-height: 0.9;
+    overflow-wrap: anywhere;
+  }
+
+  .x-hero-copy > span {
+    max-width: 34rem;
+    font-size: 0.78rem;
+    line-height: 1.55;
+  }
+
+  .x-actions {
+    display: grid;
+    width: 100%;
+  }
+
+  .x-actions .x-button {
+    width: 100%;
+    min-height: 48px;
+    justify-content: center;
   }
 
   .x-hero-three .x-hero-founder {
@@ -5050,25 +5078,25 @@ body {
   transition: height 260ms ease, background-color 260ms ease, border-color 260ms ease, box-shadow 260ms ease, backdrop-filter 260ms ease;
 }
 
-.x-site-header.is-home {
+.x-site-header.is-hero {
   position: fixed;
   right: 0;
   left: 0;
 }
 
-.x-site-header.is-home:not(.is-scrolled):not(.is-open) {
+.x-site-header.is-hero:not(.is-scrolled):not(.is-open) {
   border-color: transparent;
-  background: linear-gradient(180deg, rgba(2, 2, 2, 0.78), rgba(2, 2, 2, 0));
+  background: transparent;
   box-shadow: none;
   backdrop-filter: none;
 }
 
-.x-site-header.is-home:not(.is-scrolled) .x-site-header-inner {
+.x-site-header.is-hero:not(.is-scrolled) .x-site-header-inner {
   height: 72px;
 }
 
-.x-site-header.is-home.is-scrolled,
-.x-site-header.is-home.is-open {
+.x-site-header.is-hero.is-scrolled,
+.x-site-header.is-hero.is-open {
   border-color: rgba(243, 243, 243, 0.14);
   background: rgba(3, 3, 3, 0.96);
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.32);
@@ -5529,7 +5557,7 @@ body {
 }
 
 @media (max-width: 760px) {
-  .x-site-header.is-home:not(.is-scrolled) .x-site-header-inner {
+  .x-site-header.is-hero:not(.is-scrolled) .x-site-header-inner {
     height: 64px;
   }
 
@@ -5597,7 +5625,7 @@ body {
 
 .x-framework-hero {
   position: relative;
-  min-height: 385px;
+  min-height: 500px;
   overflow: hidden;
   border-bottom: 1px solid rgba(217, 165, 32, 0.2);
   background: #060606;
@@ -5806,10 +5834,10 @@ body {
 
 .x-framework-hero .x-wrap {
   display: flex;
-  min-height: 385px;
+  min-height: 500px;
   flex-direction: column;
   justify-content: center;
-  padding-block: 26px;
+  padding-block: 112px 54px;
   text-align: center;
 }
 
@@ -5832,7 +5860,7 @@ body {
 @media (max-width: 760px) {
   .x-framework-hero,
   .x-framework-hero .x-wrap {
-    min-height: 590px;
+    min-height: 680px;
   }
 
   .x-framework-hero .x-steps {
@@ -5867,6 +5895,20 @@ body {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
+}
+
+.about-shobhit-photo {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(217, 165, 32, 0.28);
+  border-radius: 6px;
+  background: #050505;
+}
+
+.about-shobhit-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .x-media-grid {
@@ -6204,6 +6246,11 @@ textarea.x-input {
     scroll-snap-align: start;
   }
 
+  .about-shobhit-photo {
+    width: min(100%, 320px);
+    margin-inline: auto;
+  }
+
   .testimonial-duo {
     grid-template-columns: 1fr;
     gap: 18px;
@@ -6506,6 +6553,10 @@ textarea.x-input {
 }
 
 @media (max-width: 600px) {
+  main {
+    padding-bottom: calc(64px + env(safe-area-inset-bottom));
+  }
+
   .x-site-header-inner,
   .x-site-footer-grid,
   .x-site-footer-bottom {
@@ -6524,7 +6575,7 @@ textarea.x-input {
     left: 0;
     z-index: 70;
     display: block;
-    padding: 9px 12px;
+    padding: 9px 12px calc(9px + env(safe-area-inset-bottom));
     border-top: 1px solid rgba(217, 165, 32, 0.3);
     background: rgba(4, 4, 4, 0.96);
   }
@@ -6534,8 +6585,12 @@ textarea.x-input {
   }
 
   .x-site-footer-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 18px;
+  }
+
+  .x-site-footer-grid > :first-child {
+    grid-column: 1 / -1;
   }
 
   .x-site-footer-bottom {
@@ -7944,7 +7999,7 @@ textarea.x-input {
 
 /* Final home composition overrides: kept last so responsive base rules cannot flatten the hero/fit layouts. */
 .home-hero {
-  min-height: 720px;
+  min-height: 780px;
 }
 
 .home-hero::before,
@@ -7977,10 +8032,10 @@ textarea.x-input {
 
 .home-hero-content {
   display: flex;
-  min-height: 720px;
+  min-height: 780px;
   align-items: center;
   justify-content: center;
-  padding-block: 120px 64px;
+  padding-block: 132px 70px;
   text-align: center;
 }
 
@@ -8251,7 +8306,7 @@ textarea.x-input {
 
   .home-hero-copy {
     width: 100%;
-    transform: translateY(-30px);
+    transform: translateY(120px);
   }
 
   .home-hero-spark {

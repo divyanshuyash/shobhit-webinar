@@ -12,7 +12,7 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const isHome = pathname === "/";
+  const hasHero = !["/privacy-policy", "/terms-and-conditions", "/disclaimer"].includes(pathname);
 
   useEffect(() => {
     const updateHeader = () => setScrolled(window.scrollY > 36);
@@ -23,7 +23,7 @@ export function SiteHeader() {
 
   return (
     <>
-      <header className={`x-site-header ${isHome ? "is-home" : ""} ${scrolled ? "is-scrolled" : ""} ${open ? "is-open" : ""}`}>
+      <header className={`x-site-header ${hasHero ? "is-hero" : ""} ${scrolled ? "is-scrolled" : ""} ${open ? "is-open" : ""}`}>
         <div className="x-site-header-inner">
           <Link href="/" className="x-site-brand" aria-label="Shobhit Singhal home">
             <span><BrandMark /></span>

@@ -45,7 +45,8 @@ export default function TestimonialsPage() {
   return (
     <>
       <XHero
-        image="/images/editorial/testimonials-hero.png"
+        image="/images/generated/testimonials-hero-v2.png"
+        imagePosition="76% 10%"
         eyebrow="Proof. Purpose. Impact."
         title={<>Real people. Real clarity.<br /><XAccent>Real transformations.</XAccent></>}
         copy="From niche clarity to high-ticket offers, confidence breakthroughs to consulting growth."

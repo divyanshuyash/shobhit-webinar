@@ -6,7 +6,6 @@ export const brand = {
   monogram: "SS",
   email: "sshobhit93@gmail.com",
   phone: "Contact number to be added",
-  location: "New Delhi, India",
   oneLiner:
     "Helping professionals, experts, coaches, and consultants become Modern Chanakyas by building high-ticket consulting businesses using knowledge, strategy, and AI.",
   disclaimer:
