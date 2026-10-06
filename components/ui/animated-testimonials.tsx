@@ -34,7 +34,9 @@ export function AnimatedTestimonials({
   const [activeIndex, setActiveIndex] = useState(0);
   const [direction, setDirection] = useState(1);
   const [isPaused, setIsPaused] = useState(false);
+  const [isTouching, setIsTouching] = useState(false);
   const sectionRef = useRef<HTMLElement | null>(null);
+  const swipeStartX = useRef<number | null>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.15 });
   const controls = useAnimation();
 
@@ -43,7 +45,7 @@ export function AnimatedTestimonials({
   }, [controls, isInView]);
 
   useEffect(() => {
-    if (autoRotateInterval <= 0 || testimonials.length <= 1 || isPaused) return;
+    if (autoRotateInterval <= 0 || testimonials.length <= 1 || isPaused || isTouching) return;
 
     const interval = window.setInterval(() => {
       setDirection(1);
@@ -51,7 +53,7 @@ export function AnimatedTestimonials({
     }, autoRotateInterval);
 
     return () => window.clearInterval(interval);
-  }, [autoRotateInterval, isPaused, testimonials.length]);
+  }, [autoRotateInterval, isPaused, isTouching, testimonials.length]);
 
   if (testimonials.length === 0) return null;
 
@@ -70,6 +72,31 @@ export function AnimatedTestimonials({
   const showNext = () => {
     setDirection(1);
     setActiveIndex((current) => (current + 1) % testimonials.length);
+  };
+
+  const beginSwipe = (event: React.PointerEvent<HTMLElement>) => {
+    if (event.pointerType === "mouse") return;
+    swipeStartX.current = event.clientX;
+    setIsTouching(true);
+  };
+
+  const endSwipe = (event: React.PointerEvent<HTMLElement>) => {
+    const startX = swipeStartX.current;
+    swipeStartX.current = null;
+    setIsTouching(false);
+
+    if (startX === null) return;
+
+    const distance = event.clientX - startX;
+    if (Math.abs(distance) < 48) return;
+
+    if (distance < 0) showNext();
+    else showPrevious();
+  };
+
+  const cancelSwipe = () => {
+    swipeStartX.current = null;
+    setIsTouching(false);
   };
 
   return (
@@ -136,6 +163,10 @@ export function AnimatedTestimonials({
               transition={{ duration: 0.38, ease: "easeInOut" }}
               className="relative flex min-h-[440px] flex-col border border-conclave-gold/35 bg-[linear-gradient(140deg,rgba(24,21,13,.96),rgba(7,7,7,.98)_64%)] p-7 text-left shadow-gold sm:min-h-[400px] sm:p-10"
               aria-live="polite"
+              style={{ touchAction: "pan-y" }}
+              onPointerDown={beginSwipe}
+              onPointerUp={endSwipe}
+              onPointerCancel={cancelSwipe}
             >
               <div className="flex items-start justify-between gap-5">
                 <Quote aria-hidden="true" className="text-conclave-gold/35" size={48} strokeWidth={1.2} />

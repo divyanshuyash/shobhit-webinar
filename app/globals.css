@@ -7997,6 +7997,67 @@ textarea.x-input {
   }
 }
 
+/* Phone rail behavior: every horizontal collection uses the same native touch scroll.
+   Keep vertical page scrolling available while cards and tabs snap naturally into place. */
+@media (max-width: 760px) {
+  .x-grid,
+  .x-steps,
+  .x-media-grid,
+  .x-testimonial-grid,
+  .x-short-grid,
+  .x-whatsapp-grid,
+  .home-problem-grid,
+  .home-occupation-grid,
+  .home-roadmap-board > div,
+  .exp-feature-rail,
+  .exp-framework-tabs,
+  .exp-mosaic,
+  .interactive-dock,
+  .book-rail,
+  .exp-filter-row,
+  .x-category-row {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scroll-behavior: smooth;
+    scroll-padding-inline: 1px;
+    scroll-snap-type: x proximity;
+  }
+
+  .x-grid,
+  .x-steps {
+    grid-template-columns: none !important;
+    grid-auto-flow: column;
+  }
+
+  .x-grid {
+    grid-auto-columns: minmax(76vw, 1fr);
+  }
+
+  .x-steps {
+    grid-auto-columns: minmax(160px, 70vw);
+  }
+
+  .x-grid > *,
+  .x-steps > *,
+  .x-media-grid > *,
+  .x-testimonial-grid > *,
+  .x-short-grid > *,
+  .x-whatsapp-grid > *,
+  .home-problem-grid > *,
+  .home-occupation-grid > *,
+  .home-roadmap-board > div > *,
+  .exp-feature-rail > *,
+  .exp-framework-tabs > *,
+  .exp-mosaic > *,
+  .interactive-dock > *,
+  .book-rail > *,
+  .exp-filter-row > *,
+  .x-category-row > * {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+
 /* Final home composition overrides: kept last so responsive base rules cannot flatten the hero/fit layouts. */
 .home-hero {
   min-height: 780px;
