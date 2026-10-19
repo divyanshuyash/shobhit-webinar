@@ -6061,6 +6061,31 @@ textarea.x-input {
   align-items: stretch;
 }
 
+.x-whatsapp-contact {
+  display: flex;
+  min-height: 425px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(217, 165, 32, 0.12), transparent 17rem),
+    #0b0b0b;
+}
+
+.x-whatsapp-contact .x-title {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.x-whatsapp-contact > p {
+  max-width: 390px;
+  margin: 14px 0 22px;
+  color: rgba(243, 243, 243, 0.72);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
 .x-consent {
   display: flex !important;
   grid-template-columns: none !important;
@@ -6289,6 +6314,7 @@ textarea.x-input {
   }
 
   .x-contact-webinar,
+  .x-whatsapp-contact,
   .x-contact-webinar-copy {
     min-height: 380px;
   }
@@ -6814,56 +6840,6 @@ textarea.x-input {
 
 .home-intro-player > video {
   filter: saturate(0.78) contrast(1.05);
-}
-
-.home-intro-player-shade {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(5, 5, 5, 0.2), rgba(5, 5, 5, 0.06)), linear-gradient(180deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.56));
-}
-
-.home-intro-player-control {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 2;
-  display: grid;
-  width: 58px;
-  height: 58px;
-  place-items: center;
-  border: 1px solid rgba(243, 243, 243, 0.8);
-  border-radius: 50%;
-  color: #0a0a0a;
-  background: #f3f3f3;
-  box-shadow: 0 9px 25px rgba(0, 0, 0, 0.42);
-  cursor: pointer;
-  transform: translate(-50%, -50%);
-  transition: color 180ms ease, background 180ms ease, transform 180ms ease;
-}
-
-.home-intro-player-control:hover {
-  color: #f3f3f3;
-  background: #d9a520;
-  transform: translate(-50%, -50%) scale(1.06);
-}
-
-.home-intro-player.is-started .home-intro-player-control {
-  top: auto;
-  bottom: 15px;
-  left: auto;
-  right: 15px;
-  width: 42px;
-  height: 42px;
-  color: #f3f3f3;
-  background: rgba(5, 5, 5, 0.84);
-  backdrop-filter: blur(8px);
-  transform: none;
-}
-
-.home-intro-player.is-started .home-intro-player-control:hover {
-  color: #0a0a0a;
-  background: #d9a520;
-  transform: scale(1.06);
 }
 
 .home-intro-copy {
@@ -8442,4 +8418,22 @@ textarea.x-input {
     grid-column: auto;
     min-height: 105px;
   }
+}
+
+/* Make supporting copy easier to read without changing compact labels or navigation. */
+main p:not([class*="uppercase"]),
+main blockquote,
+main .section-copy,
+main .x-hero-copy > span,
+main .home-intro-copy > span,
+main .home-fit-top > span,
+main .home-equation-heading > span,
+main .home-fit-intro > span,
+main .home-community-intro > span,
+main .home-proof-story p,
+main .home-review-card footer,
+main .home-review-card blockquote {
+  font-size: clamp(0.78rem, 0.85vw, 0.86rem);
+  font-weight: 600;
+  line-height: 1.65;
 }

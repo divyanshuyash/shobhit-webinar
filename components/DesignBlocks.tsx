@@ -495,7 +495,7 @@ export function WebinarCard({ className = "", cta = "Register Now" }: { classNam
       <div className="my-5 h-px bg-gradient-to-r from-gold/40 via-gold/10 to-transparent" />
       <div className="grid gap-4 text-xs font-bold uppercase tracking-wide text-offwhite">
         <p className="flex items-center gap-3"><GlyphMark name="calendar" size={20} className="text-gold" /> Every Saturday & Sunday</p>
-        <p className="flex items-center gap-3"><GlyphMark name="clock" size={20} className="text-gold" /> 11:00 AM (IST)</p>
+        <p className="flex items-center gap-3"><GlyphMark name="clock" size={20} className="text-gold" /> 11:00 AM – 1:00 PM (IST)</p>
       </div>
       <GoldButton className="mt-6 w-full">{cta}</GoldButton>
     </aside>
@@ -567,7 +567,7 @@ export function CtaBand({
           </div>
           <div className="rounded-[4px] border border-black/25 bg-black p-4 text-offwhite">
             <p className="flex items-center gap-2 text-[11px] font-black uppercase tracking-wide text-gold"><GlyphMark name="calendar" size={18} /> Every Saturday & Sunday</p>
-            <p className="mt-2 flex items-center gap-2 text-[11px] font-black uppercase tracking-wide text-gold"><GlyphMark name="clock" size={18} /> 11:00 AM (IST)</p>
+            <p className="mt-2 flex items-center gap-2 text-[11px] font-black uppercase tracking-wide text-gold"><GlyphMark name="clock" size={18} /> 11:00 AM – 1:00 PM (IST)</p>
             <GoldButton className="mt-4 w-full">{button}</GoldButton>
           </div>
         </div>

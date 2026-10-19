@@ -100,7 +100,7 @@ export function SchedulePanel({ compact = false }: { compact?: boolean }) {
       <p>The Crorepati Consultant Blueprint</p>
       <div className="exp-schedule-grid">
         <span><CalendarDays size={18} /> Every Saturday & Sunday</span>
-        <span><Clock3 size={18} /> 11:00 AM (IST)</span>
+        <span><Clock3 size={18} /> 11:00 AM – 1:00 PM (IST)</span>
         <span><Video size={18} /> Live online</span>
       </div>
       <Link href={WEBINAR_URL}>Reserve your seat <ArrowRight size={15} /></Link>

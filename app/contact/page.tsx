@@ -26,10 +26,10 @@ import {
   XStats,
   XTitle
 } from "@/components/ExactBlocks";
-import { ContactMessageForm } from "@/components/ContactMessageForm";
 import { brand } from "@/data/constants";
 
 const contactEmail = brand.email;
+const whatsappChatUrl = "https://wa.me/918003093515";
 
 const helpOptions = [
   {
@@ -76,15 +76,15 @@ const contactFaqs = [
   },
   {
     q: "Can I invite Shobhit Singhal for an event?",
-    a: "Yes. Select Speaking Invitations in the form and include the event date, audience, format, and location."
+    a: "Yes. Send Shobhit a WhatsApp message with the event date, audience, format, and location."
   },
   {
     q: "Do you offer corporate training or consulting?",
-    a: "Corporate and partnership inquiries can be shared through the form for a relevant follow-up."
+    a: "Send Shobhit a WhatsApp message to discuss corporate training, consulting, or partnerships."
   },
   {
     q: "Is there a cost to connect?",
-    a: "There is no cost to submit a genuine inquiry or request webinar support."
+    a: "There is no cost to start a WhatsApp conversation or request webinar support."
   }
 ];
 
@@ -103,7 +103,7 @@ export default function ContactPage() {
           <span><MessageSquareText size={15} /> Real conversations</span>
           <span><CheckCircle2 size={15} /> Committed to your growth</span>
         </div>
-        <div className="x-actions"><XButton href="#contact-form">Send us a message</XButton></div>
+        <div className="x-actions"><XButton href={whatsappChatUrl}>Chat on WhatsApp</XButton></div>
       </XHero>
 
       <XSection>
@@ -113,9 +113,10 @@ export default function ContactPage() {
 
       <XSection className="is-alt">
         <div className="x-contact-main">
-          <article id="contact-form" className="x-panel">
-            <XTitle align="left">Send Us <XAccent>A Message</XAccent></XTitle>
-            <ContactMessageForm />
+          <article id="contact" className="x-panel x-whatsapp-contact">
+            <XTitle>Chat With <XAccent>Shobhit</XAccent></XTitle>
+            <p>Have a question about the webinar, consulting, partnerships, or speaking? Start a direct conversation with Shobhit on WhatsApp.</p>
+            <XButton href={whatsappChatUrl}>Chat with Shobhit on WhatsApp</XButton>
           </article>
 
           <article className="x-contact-webinar">
@@ -132,7 +133,7 @@ export default function ContactPage() {
               <strong>Learn the Modern Chanakya Way to build a profitable consulting business.</strong>
               <ul>
                 <li><CalendarDays size={16} /> Every Saturday & Sunday</li>
-                <li><Clock3 size={16} /> 11:00 AM (IST)</li>
+                <li><Clock3 size={16} /> 11:00 AM – 1:00 PM (IST)</li>
                 <li><Video size={16} /> Live online</li>
               </ul>
               <XButton>Reserve your seat now</XButton>

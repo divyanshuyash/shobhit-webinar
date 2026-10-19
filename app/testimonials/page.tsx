@@ -17,9 +17,9 @@ import { VideoPreview } from "@/components/VideoPreview";
 import { testimonialVideos } from "@/data/testimonialVideos";
 
 const conclaveReels = [
-  { src: "https://github.com/divyanshuyash/shobhit-webinar/releases/download/video-v1/Shobhit.Reel.1.Award.Reel.2.mp4", title: "Awards & recognition" },
-  { src: "https://github.com/divyanshuyash/shobhit-webinar/releases/download/video-v1/Shobhit.Reel.2.Entry.1.mp4", title: "Entering the conclave" },
-  { src: "https://github.com/divyanshuyash/shobhit-webinar/releases/download/video-v1/Shobhit.Reel.3.Speakers.1.mp4", title: "Conclave speakers" }
+  { src: "https://github.com/divyanshuyash/shobhit-webinar/releases/download/video-v1/Shobhit.Reel.1.Award.Reel.2.mp4", title: "Awards & recognition", poster: "/images/testimonial-thumbnails/conclave-awards-1s.jpg" },
+  { src: "https://github.com/divyanshuyash/shobhit-webinar/releases/download/video-v1/Shobhit.Reel.2.Entry.1.mp4", title: "Entering the conclave", poster: "/images/testimonial-thumbnails/conclave-entry-1s.jpg" },
+  { src: "https://github.com/divyanshuyash/shobhit-webinar/releases/download/video-v1/Shobhit.Reel.3.Speakers.1.mp4", title: "Conclave speakers", poster: "/images/testimonial-thumbnails/conclave-speakers-1s.jpg" }
 ];
 
 const clientWinPhotos: ShowcasePhoto[] = [
@@ -55,10 +55,10 @@ export default function TestimonialsPage() {
       <XSection>
         <XTitle>Featured <XAccent>video testimonials</XAccent></XTitle>
         <div className="x-media-grid x-media-grid-compact" style={{ "--x-media-cols": 4 } as CSSProperties}>
-          <XMediaCard image="/images/editorial/testimonial-leadership.png" title="See the Transformers Hub experience in action" copy="Community testimonial" videoSrc={testimonialVideos[0].src} />
-          <XMediaCard image="/images/editorial/testimonial-leadership.png" title="From confusion to a clear offer" copy="Community testimonial" videoSrc={testimonialVideos[1].src} />
-          <XMediaCard image="/images/editorial/testimonial-finance.png" title="Niche clarity changed everything" copy="Community testimonial" videoSrc={testimonialVideos[2].src} />
-          <XMediaCard image="/images/editorial/testimonial-career.png" title="Built confidence and a consulting business" copy="Community testimonial" videoSrc={testimonialVideos[3].src} />
+          <XMediaCard image="/images/testimonial-thumbnails/hez1732-1s.jpg" title="See the Transformers Hub experience in action" copy="Community testimonial" videoSrc={testimonialVideos[0].src} />
+          <XMediaCard image="/images/testimonial-thumbnails/hez1733-1s.jpg" title="From confusion to a clear offer" copy="Community testimonial" videoSrc={testimonialVideos[1].src} />
+          <XMediaCard image="/images/testimonial-thumbnails/hez1735-1s.jpg" title="Niche clarity changed everything" copy="Community testimonial" videoSrc={testimonialVideos[2].src} />
+          <XMediaCard image="/images/testimonial-thumbnails/hez1737-1s.jpg" title="Built confidence and a consulting business" copy="Community testimonial" videoSrc={testimonialVideos[3].src} />
         </div>
       </XSection>
 
@@ -81,9 +81,9 @@ export default function TestimonialsPage() {
       <XSection>
         <XTitle>Glimpse of <XAccent>Chanakya Conclave</XAccent></XTitle>
         <div className="x-conclave-reel-grid">
-          {conclaveReels.map(({ src, title }) => (
+          {conclaveReels.map(({ src, title, poster }) => (
             <article className="x-conclave-reel-card" key={src}>
-              <VideoPreview src={src} title={title} />
+              <VideoPreview src={src} title={title} poster={poster} />
               <p>{title}</p>
             </article>
           ))}

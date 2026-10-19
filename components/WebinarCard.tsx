@@ -25,7 +25,7 @@ export function WebinarCard({ cta = "Register Now" }: { cta?: string }) {
         </div>
         <div className="flex items-center gap-4">
           <GlyphMark name="clock" size={22} className="text-gold" />
-          <p className="text-xs font-bold uppercase tracking-wider text-offwhite">11:00 AM<br /><span className="text-[10px] text-muted">(IST)</span></p>
+          <p className="text-xs font-bold uppercase tracking-wider text-offwhite">11:00 AM – 1:00 PM<br /><span className="text-[10px] text-muted">(IST)</span></p>
         </div>
       </div>
       

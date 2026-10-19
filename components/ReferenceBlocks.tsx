@@ -231,7 +231,7 @@ export function GoldCTA({
         </div>
         <div className="rounded-sm border border-black/25 bg-black p-4 text-offwhite">
           <p className="text-xs font-black uppercase tracking-[0.16em] text-gold">Every Saturday & Sunday</p>
-          <p className="mt-2 font-display text-3xl uppercase leading-none">11:00 AM</p>
+          <p className="mt-2 font-display text-3xl uppercase leading-none">11:00 AM – 1:00 PM</p>
           <GoldButton className="mt-4 w-full">{button}</GoldButton>
         </div>
       </div>

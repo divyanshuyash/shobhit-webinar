@@ -28,7 +28,7 @@ export function CTASection({
             ))}
           </div>
           <p className="mt-4 text-sm font-black uppercase tracking-wide text-gold">Every Saturday & Sunday</p>
-          <p className="mt-2 font-display text-4xl uppercase leading-none tracking-wide">11:00 AM</p>
+          <p className="mt-2 font-display text-4xl uppercase leading-none tracking-wide">11:00 AM – 1:00 PM</p>
           <p className="mb-5 mt-1 text-sm text-muted">Live Online Webinar</p>
           <GoldButton className="w-full">{button}</GoldButton>
         </div>

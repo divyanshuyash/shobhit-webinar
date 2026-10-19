@@ -62,7 +62,7 @@ export function XSchedule() {
       <strong>The Crorepati Consultant Blueprint</strong>
       <div>
         <span><CalendarDays size={17} /> Every Saturday & Sunday</span>
-        <span><Clock3 size={17} /> 11:00 AM (IST)</span>
+        <span><Clock3 size={17} /> 11:00 AM – 1:00 PM (IST)</span>
         <span><Video size={17} /> Live online</span>
       </div>
       <XButton>Register now</XButton>
@@ -198,7 +198,7 @@ export function XMediaCard({ image, title, copy, video = false, label, imagePosi
     <article className="x-media-card">
       <div className={`x-media-image ${videoSrc ? "is-video-source" : ""}`}>
         {videoSrc ? (
-          <VideoPreview src={videoSrc} title={title} />
+          <VideoPreview src={videoSrc} title={title} poster={image} />
         ) : <Image src={image} alt={title} fill sizes="(max-width: 800px) 100vw, 33vw" style={{ objectPosition: imagePosition }} />}
         {video && !videoSrc ? <span className="x-play"><Play size={20} fill="currentColor" /></span> : null}
         {label ? <small>{label}</small> : null}
@@ -236,7 +236,7 @@ export function XCta({ title = "Your first step starts this weekend.", copy = "L
     <div className="x-cta">
       <span className="x-cta-icon"><CalendarDays size={31} /></span>
       <div><p>Upcoming free weekend webinar</p><h2>{title}</h2><span>{copy}</span></div>
-      <div className="x-cta-time"><b><CalendarDays size={15} /> Every Saturday & Sunday</b><b><Clock3 size={15} /> 11:00 AM (IST)</b></div>
+      <div className="x-cta-time"><b><CalendarDays size={15} /> Every Saturday & Sunday</b><b><Clock3 size={15} /> 11:00 AM – 1:00 PM (IST)</b></div>
       <XButton>Reserve your seat now</XButton>
     </div>
   );
