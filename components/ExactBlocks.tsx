@@ -8,7 +8,8 @@ import {
   Clock3,
   Play,
   Star,
-  Video
+  Video,
+  X
 } from "lucide-react";
 import { WEBINAR_URL } from "@/data/constants";
 import { Reveal, Stagger, StaggerCard, StaggerCell } from "./ExactMotion";
@@ -163,7 +164,12 @@ export function XGrid({ items, columns = 5, numbered = false }: { items: ExactIt
 export function XCheckList({ items, negative = false }: { items: string[]; negative?: boolean }) {
   return (
     <ul className={`x-checks ${negative ? "is-negative" : ""}`}>
-      {items.map((item) => <li key={item}><span><Check size={12} /></span>{item}</li>)}
+      {items.map((item) => (
+        <li key={item}>
+          <span aria-hidden="true">{negative ? <X size={13} strokeWidth={2.5} /> : <Check size={13} strokeWidth={2.5} />}</span>
+          {item}
+        </li>
+      ))}
     </ul>
   );
 }

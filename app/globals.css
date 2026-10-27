@@ -4396,13 +4396,19 @@ body {
 
 .x-checks li > span {
   display: grid;
-  width: 18px;
-  height: 18px;
-  flex: 0 0 18px;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
   place-items: center;
+  margin-top: 0.15em;
   border: 1px solid rgba(217, 165, 32, 0.5);
   border-radius: 50%;
   color: #d9a520;
+  line-height: 1;
+}
+
+.x-checks li > span svg {
+  display: block;
 }
 
 .x-checks.is-negative li > span {
@@ -5440,9 +5446,10 @@ body {
 .home-fit-list em {
   grid-column: 1 / -1;
   color: rgba(243, 243, 243, 0.77);
-  font-size: 8.8px;
+  font-size: clamp(0.82rem, 0.9vw, 1rem);
+  font-weight: 600;
   font-style: normal;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .home-fit-footer {
@@ -6276,7 +6283,11 @@ textarea.x-input {
   .x-form-grid,
   .x-contact-main,
   .x-contact-impact {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .x-split-grid > * {
+    min-width: 0;
   }
 
   .x-form-grid label.is-wide {
@@ -7466,13 +7477,13 @@ textarea.x-input {
 
 .home-review-card strong {
   color: #f3f3f3;
-  font-size: 9px;
+  font-size: 13px;
   font-weight: 800;
 }
 
 .home-review-card small {
   color: #d9a520;
-  font-size: 7px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -7577,15 +7588,18 @@ textarea.x-input {
 .home-roadmap-board strong {
   margin-top: 10px;
   color: #f3f3f3;
-  font-size: 8px;
-  line-height: 1.25;
+  font-size: clamp(1rem, 0.9rem + 0.1vw, 1.125rem);
+  font-weight: 700;
+  line-height: 1.35;
   text-transform: uppercase;
 }
 
 .home-roadmap-board small {
   margin-top: 4px;
   color: #8e8e8e;
-  font-size: 7px;
+  font-size: var(--compact-description-size);
+  font-weight: 600;
+  line-height: 1.5;
 }
 
 .home-ai-parallax {
@@ -8388,7 +8402,7 @@ textarea.x-input {
     padding: 11px 10px;
     background: none;
     backdrop-filter: none;
-    font-size: 0.95rem;
+    font-size: 1rem;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95);
   }
 
@@ -8420,20 +8434,121 @@ textarea.x-input {
   }
 }
 
-/* Make supporting copy easier to read without changing compact labels or navigation. */
+/* Body copy and descriptions in compact cards use separate responsive scales. */
+:root {
+  --description-size: clamp(0.9375rem, 0.75rem + 0.25vw, 1.0625rem);
+  --description-line-height: 1.65;
+  --compact-description-size: clamp(0.875rem, 0.75rem + 0.18vw, 0.9375rem);
+  --supporting-meta-size: clamp(0.75rem, 0.7rem + 0.1vw, 0.8125rem);
+}
+
 main p:not([class*="uppercase"]),
 main blockquote,
 main .section-copy,
+main .interactive-head > span,
+main .stage-meta span,
 main .x-hero-copy > span,
+main .x-schedule > div span,
+main .x-meta small,
+main .x-checks li,
+main .x-steps small,
+main .x-media-card p,
+main .x-video-testimonial span,
+main .x-testimonial p,
+main .x-faq details p,
+main .x-cta > div > span,
+main .x-cta-time b,
+main .x-panel p,
+main .x-framework-hero .x-wrap > p,
+main .x-whatsapp-contact > p,
+main .x-contact-webinar-copy > strong,
+main .x-contact-location small,
+main .x-story-panel p,
 main .home-intro-copy > span,
-main .home-fit-top > span,
+main .home-hero-schedule span,
+main .home-hero-video small,
+main .home-hero-webinar-card > small,
+main .home-section-heading > p,
 main .home-equation-heading > span,
+main .home-problem-grid p,
+main .home-occupation-grid p,
+main .home-equation-steps p,
+main .home-problem-answer > span,
+main .home-fit-top > span,
+main .home-fit-list em,
+main .home-fit-footer span,
 main .home-fit-intro > span,
 main .home-community-intro > span,
 main .home-proof-story p,
-main .home-review-card footer,
-main .home-review-card blockquote {
-  font-size: clamp(0.78rem, 0.85vw, 0.86rem);
+main .home-review-card blockquote,
+main .home-roadmap-board small,
+main .home-ai-content > div:first-child > span,
+main .home-ai-signals small,
+main .home-final-cta > div:nth-child(2) > span,
+.x-site-footer p {
+  font-size: var(--description-size);
   font-weight: 600;
-  line-height: 1.65;
+  line-height: var(--description-line-height);
+}
+
+main .x-card p,
+main .x-steps small,
+main .x-media-card p,
+main .x-testimonial p,
+main .x-schedule > div span,
+main .x-meta small,
+main .x-cta-time b,
+main .home-hero-schedule span,
+main .home-hero-video small,
+main .home-hero-webinar-card > small,
+main .home-problem-grid p,
+main .home-occupation-grid p,
+main .home-equation-steps p,
+main .home-problem-answer > span,
+main .home-fit-list em,
+main .home-review-card blockquote,
+main .home-roadmap-board small,
+main .home-ai-signals small {
+  font-size: var(--compact-description-size);
+  line-height: 1.5;
+}
+
+main .x-steps b,
+main .x-media-card h3,
+main .home-roadmap-board strong,
+main .home-problem-answer b,
+main .home-fit-footer strong {
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+main .x-meta b,
+main .home-hero-video b {
+  font-size: 0.875rem;
+}
+
+main .x-meta small,
+main .home-hero-video small,
+main .home-hero-webinar-card > small,
+main .x-testimonial span {
+  font-size: var(--supporting-meta-size);
+  line-height: 1.45;
+}
+
+main .x-faq summary {
+  min-height: 48px;
+  font-size: var(--description-size);
+  line-height: 1.4;
+}
+
+/* Footer supporting text uses a smaller but still readable navigation scale. */
+.x-site-links a,
+.x-site-contact span {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.x-site-footer-bottom {
+  font-size: 0.75rem;
+  line-height: 1.5;
 }

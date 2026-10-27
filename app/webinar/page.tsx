@@ -21,6 +21,7 @@ import {
 import type { CSSProperties } from "react";
 import {
   XAccent,
+  XCheckList,
   XCta,
   XFaq,
   XGrid,
@@ -71,11 +72,11 @@ export default function WebinarPage() {
         <div className="x-split-grid">
           <div className="x-panel">
             <XTitle align="left"><XAccent>This webinar is for you if...</XAccent></XTitle>
-            <ul className="x-checks">{webinarFor.map((item) => <li key={item}><span>✓</span>{item}</li>)}</ul>
+            <XCheckList items={webinarFor} />
           </div>
           <div className="x-panel">
             <XTitle align="left"><span className="text-red-500">Not for you if...</span></XTitle>
-            <ul className="x-checks is-negative">{notFor.map((item) => <li key={item}><span>×</span>{item}</li>)}</ul>
+            <XCheckList items={notFor} negative />
           </div>
         </div>
       </XSection>

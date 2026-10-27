@@ -19,6 +19,7 @@ import {
 import type { CSSProperties } from "react";
 import {
   XAccent,
+  XCheckList,
   XCta,
   XGrid,
   XHero,
@@ -82,7 +83,7 @@ export default function AboutPage() {
           <article className="x-story-panel">
             <Image src="/images/founder/MUK08210.jpg" alt="Shobhit Singhal celebrating with the Transformers Hub community" fill sizes="(max-width: 760px) 100vw, 50vw" style={{ objectPosition: "46% 46%" }} />
             <div className="x-story-shade" />
-            <div><XTitle align="left">Mission: creating <XAccent>Crorepati Chanakyas</XAccent></XTitle><ul className="x-checks"><li><span>✓</span>Elevate professionals into world-class consultants.</li><li><span>✓</span>Build businesses with impact, freedom and legacy.</li><li><span>✓</span>Create a new India of thinkers, strategists and problem solvers.</li></ul></div>
+            <div><XTitle align="left">Mission: creating <XAccent>Crorepati Chanakyas</XAccent></XTitle><XCheckList items={["Elevate professionals into world-class consultants.", "Build businesses with impact, freedom and legacy.", "Create a new India of thinkers, strategists and problem solvers."]} /></div>
           </article>
         </div>
       </XSection>
