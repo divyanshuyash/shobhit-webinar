@@ -14,7 +14,7 @@ import {
 import { Testimonials } from "@/components/Testimonials";
 import { AnimatedPhotoShowcase, type ShowcasePhoto } from "@/components/ui/animated-photo-showcase";
 import { VideoPreview } from "@/components/VideoPreview";
-import { testimonialVideos } from "@/data/testimonialVideos";
+import { latestTestimonialVideos, testimonialVideos } from "@/data/testimonialVideos";
 
 const conclaveReels = [
   { src: "https://github.com/divyanshuyash/shobhit-webinar/releases/download/video-v1/Shobhit.Reel.1.Award.Reel.2.mp4", title: "Awards & recognition", poster: "/images/testimonial-thumbnails/conclave-awards-1s.jpg" },
@@ -54,6 +54,15 @@ export default function TestimonialsPage() {
 
       <XSection>
         <XTitle>Featured <XAccent>video testimonials</XAccent></XTitle>
+        <div className="x-media-grid x-media-grid-compact" style={{ "--x-media-cols": 3 } as CSSProperties}>
+          {latestTestimonialVideos.map(({ src, title, poster }) => (
+            <XMediaCard key={src} image={poster} title={title} copy="Community testimonial" videoSrc={src} />
+          ))}
+        </div>
+      </XSection>
+
+      <XSection>
+        <XTitle>More <XAccent>community stories</XAccent></XTitle>
         <div className="x-media-grid x-media-grid-compact" style={{ "--x-media-cols": 4 } as CSSProperties}>
           <XMediaCard image="/images/testimonial-thumbnails/hez1732-1s.jpg" title="See the Transformers Hub experience in action" copy="Community testimonial" videoSrc={testimonialVideos[0].src} />
           <XMediaCard image="/images/testimonial-thumbnails/hez1733-1s.jpg" title="From confusion to a clear offer" copy="Community testimonial" videoSrc={testimonialVideos[1].src} />
