@@ -1,5 +1,5 @@
 export const testimonialVideos = [
-  { src: "https://github.com/divyanshuyash/shobhit-webinar/releases/download/video-v1/HEZ1732.MP4", title: "Community testimonial 01" },
+  { src: "/videos/testimonials/hez1732.mp4", title: "Community testimonial 01" },
   { src: "/videos/testimonials/hez1733.mp4", title: "Community testimonial 02" },
   { src: "/videos/testimonials/hez1735.mp4", title: "Community testimonial 03" },
   { src: "/videos/testimonials/hez1737.mp4", title: "Community testimonial 04" },
