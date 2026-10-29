@@ -17,9 +17,9 @@ import { VideoPreview } from "@/components/VideoPreview";
 import { latestTestimonialVideos, testimonialVideos } from "@/data/testimonialVideos";
 
 const conclaveReels = [
-  { src: "https://github.com/divyanshuyash/shobhit-webinar/releases/download/video-v1/Shobhit.Reel.1.Award.Reel.2.mp4", title: "Awards & recognition", poster: "/images/testimonial-thumbnails/conclave-awards-1s.jpg" },
-  { src: "https://github.com/divyanshuyash/shobhit-webinar/releases/download/video-v1/Shobhit.Reel.2.Entry.1.mp4", title: "Entering the conclave", poster: "/images/testimonial-thumbnails/conclave-entry-1s.jpg" },
-  { src: "https://github.com/divyanshuyash/shobhit-webinar/releases/download/video-v1/Shobhit.Reel.3.Speakers.1.mp4", title: "Conclave speakers", poster: "/images/testimonial-thumbnails/conclave-speakers-1s.jpg" }
+  { src: "/videos/reels/shobhit-awards.mp4", title: "Awards & recognition", poster: "/images/testimonial-thumbnails/conclave-awards-1s.jpg" },
+  { src: "/videos/reels/shobhit-entry.mp4", title: "Entering the conclave", poster: "/images/testimonial-thumbnails/conclave-entry-1s.jpg" },
+  { src: "/videos/reels/shobhit-speakers.mp4", title: "Conclave speakers", poster: "/images/testimonial-thumbnails/conclave-speakers-1s.jpg" }
 ];
 
 const clientWinPhotos: ShowcasePhoto[] = [

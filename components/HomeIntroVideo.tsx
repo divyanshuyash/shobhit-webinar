@@ -1,4 +1,4 @@
-const INTRO_VIDEO_URL = "https://github.com/divyanshuyash/shobhit-webinar/releases/download/video-v1/Shobhit.Event.Video.mp4";
+const INTRO_VIDEO_URL = "/videos/shobhit-event.mp4";
 
 export function HomeIntroVideo() {
   return (
