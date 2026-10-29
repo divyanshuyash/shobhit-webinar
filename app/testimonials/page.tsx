@@ -14,7 +14,7 @@ import {
 import { Testimonials } from "@/components/Testimonials";
 import { AnimatedPhotoShowcase, type ShowcasePhoto } from "@/components/ui/animated-photo-showcase";
 import { VideoPreview } from "@/components/VideoPreview";
-import { latestTestimonialVideos, testimonialVideos } from "@/data/testimonialVideos";
+import { latestTestimonialVideos, testimonialCardCopy, testimonialCardTitle, testimonialVideos } from "@/data/testimonialVideos";
 
 const conclaveReels = [
   { src: "/videos/reels/shobhit-awards.mp4", title: "Awards & recognition", poster: "/images/testimonial-thumbnails/conclave-awards-1s.jpg" },
@@ -55,8 +55,8 @@ export default function TestimonialsPage() {
       <XSection>
         <XTitle>Featured <XAccent>video testimonials</XAccent></XTitle>
         <div className="x-media-grid x-media-grid-compact" style={{ "--x-media-cols": 3 } as CSSProperties}>
-          {latestTestimonialVideos.map(({ src, title, poster }) => (
-            <XMediaCard key={src} image={poster} title={title} copy="Community testimonial" videoSrc={src} />
+          {latestTestimonialVideos.map(({ src, poster }) => (
+            <XMediaCard key={src} image={poster} title={testimonialCardTitle} copy={testimonialCardCopy} videoSrc={src} />
           ))}
         </div>
       </XSection>
@@ -64,10 +64,10 @@ export default function TestimonialsPage() {
       <XSection>
         <XTitle>More <XAccent>community stories</XAccent></XTitle>
         <div className="x-media-grid x-media-grid-compact" style={{ "--x-media-cols": 4 } as CSSProperties}>
-          <XMediaCard image="/images/testimonial-thumbnails/hez1732-1s.jpg" title="See the Transformers Hub experience in action" copy="Community testimonial" videoSrc={testimonialVideos[0].src} />
-          <XMediaCard image="/images/testimonial-thumbnails/hez1733-1s.jpg" title="From confusion to a clear offer" copy="Community testimonial" videoSrc={testimonialVideos[1].src} />
-          <XMediaCard image="/images/testimonial-thumbnails/hez1735-1s.jpg" title="Niche clarity changed everything" copy="Community testimonial" videoSrc={testimonialVideos[2].src} />
-          <XMediaCard image="/images/testimonial-thumbnails/hez1737-1s.jpg" title="Built confidence and a consulting business" copy="Community testimonial" videoSrc={testimonialVideos[3].src} />
+          <XMediaCard image="/images/testimonial-thumbnails/hez1732-1s.jpg" title={testimonialCardTitle} copy={testimonialCardCopy} videoSrc={testimonialVideos[0].src} />
+          <XMediaCard image="/images/testimonial-thumbnails/hez1733-1s.jpg" title={testimonialCardTitle} copy={testimonialCardCopy} videoSrc={testimonialVideos[1].src} />
+          <XMediaCard image="/images/testimonial-thumbnails/hez1735-1s.jpg" title={testimonialCardTitle} copy={testimonialCardCopy} videoSrc={testimonialVideos[2].src} />
+          <XMediaCard image="/images/testimonial-thumbnails/hez1737-1s.jpg" title={testimonialCardTitle} copy={testimonialCardCopy} videoSrc={testimonialVideos[3].src} />
         </div>
       </XSection>
 

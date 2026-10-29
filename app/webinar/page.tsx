@@ -35,7 +35,7 @@ import {
   XTitle
 } from "@/components/ExactBlocks";
 import { faqs, notFor, webinarFor } from "@/data/site";
-import { testimonialVideos } from "@/data/testimonialVideos";
+import { testimonialCardCopy, testimonialCardTitle, testimonialVideos } from "@/data/testimonialVideos";
 
 export default function WebinarPage() {
   return (
@@ -135,10 +135,10 @@ export default function WebinarPage() {
       <XSection>
         <XTitle align="left">Loved by consultants & entrepreneurs</XTitle>
         <div className="x-media-grid" style={{ "--x-media-cols": 4 } as CSSProperties}>
-          <XMediaCard image="/images/testimonial-thumbnails/hez1739-1s.jpg" title="Clarity that changed everything" copy="Community testimonial" videoSrc={testimonialVideos[4].src} />
-          <XMediaCard image="/images/testimonial-thumbnails/hez1741-1s.jpg" title="Practical and powerful" copy="Community testimonial" videoSrc={testimonialVideos[5].src} />
-          <XMediaCard image="/images/testimonial-thumbnails/hez1732-1s.jpg" title="The DCL framework works" copy="Community testimonial" videoSrc={testimonialVideos[0].src} />
-          <XMediaCard image="/images/testimonial-thumbnails/hez1733-1s.jpg" title="A system I can follow" copy="Community testimonial" videoSrc={testimonialVideos[1].src} />
+          <XMediaCard image="/images/testimonial-thumbnails/hez1739-1s.jpg" title={testimonialCardTitle} copy={testimonialCardCopy} videoSrc={testimonialVideos[4].src} />
+          <XMediaCard image="/images/testimonial-thumbnails/hez1741-1s.jpg" title={testimonialCardTitle} copy={testimonialCardCopy} videoSrc={testimonialVideos[5].src} />
+          <XMediaCard image="/images/testimonial-thumbnails/hez1732-1s.jpg" title={testimonialCardTitle} copy={testimonialCardCopy} videoSrc={testimonialVideos[0].src} />
+          <XMediaCard image="/images/testimonial-thumbnails/hez1733-1s.jpg" title={testimonialCardTitle} copy={testimonialCardCopy} videoSrc={testimonialVideos[1].src} />
         </div>
       </XSection>
 
